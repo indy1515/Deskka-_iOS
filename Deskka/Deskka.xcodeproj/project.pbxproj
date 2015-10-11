@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18BF025F1BCAD02600070C1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF025E1BCAD02600070C1B /* main.m */; };
+		18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02611BCAD02600070C1B /* AppDelegate.m */; };
+		18BF02681BCAD02600070C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02661BCAD02600070C1B /* Main.storyboard */; };
+		18BF026A1BCAD02600070C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02691BCAD02600070C1B /* Assets.xcassets */; };
+		18BF026D1BCAD02600070C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF026B1BCAD02600070C1B /* LaunchScreen.storyboard */; };
+		18BF02781BCAD02600070C1B /* DeskkaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02771BCAD02600070C1B /* DeskkaTests.m */; };
+		18BF02831BCAD02600070C1B /* DeskkaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02821BCAD02600070C1B /* DeskkaUITests.m */; };
+		18BF02921BCAD08A00070C1B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02911BCAD08A00070C1B /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
+		18BF02961BCAD0BD00070C1B /* Geomanist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02951BCAD0BD00070C1B /* Geomanist-Bold.otf */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18BF02741BCAD02600070C1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18BF02521BCAD02600070C1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18BF02591BCAD02600070C1B;
+			remoteInfo = Deskka;
+		};
+		18BF027F1BCAD02600070C1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18BF02521BCAD02600070C1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18BF02591BCAD02600070C1B;
+			remoteInfo = Deskka;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18BF025A1BCAD02600070C1B /* Deskka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deskka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BF025E1BCAD02600070C1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18BF02601BCAD02600070C1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18BF02611BCAD02600070C1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18BF02671BCAD02600070C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18BF02691BCAD02600070C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18BF026C1BCAD02600070C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18BF026E1BCAD02600070C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BF02731BCAD02600070C1B /* DeskkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeskkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BF02771BCAD02600070C1B /* DeskkaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeskkaTests.m; sourceTree = "<group>"; };
+		18BF02791BCAD02600070C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BF027E1BCAD02600070C1B /* DeskkaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeskkaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BF02821BCAD02600070C1B /* DeskkaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeskkaUITests.m; sourceTree = "<group>"; };
+		18BF02841BCAD02600070C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BF02901BCAD08A00070C1B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		18BF02911BCAD08A00070C1B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		18BF02951BCAD0BD00070C1B /* Geomanist-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomanist-Bold.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18BF02571BCAD02600070C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BF02701BCAD02600070C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BF027B1BCAD02600070C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18BF02511BCAD02600070C1B = {
+			isa = PBXGroup;
+			children = (
+				18BF025C1BCAD02600070C1B /* Deskka */,
+				18BF02761BCAD02600070C1B /* DeskkaTests */,
+				18BF02811BCAD02600070C1B /* DeskkaUITests */,
+				18BF025B1BCAD02600070C1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18BF025B1BCAD02600070C1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18BF025A1BCAD02600070C1B /* Deskka.app */,
+				18BF02731BCAD02600070C1B /* DeskkaTests.xctest */,
+				18BF027E1BCAD02600070C1B /* DeskkaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18BF025C1BCAD02600070C1B /* Deskka */ = {
+			isa = PBXGroup;
+			children = (
+				18BF02931BCAD0BD00070C1B /* Resource */,
+				18BF02601BCAD02600070C1B /* AppDelegate.h */,
+				18BF02611BCAD02600070C1B /* AppDelegate.m */,
+				18BF02901BCAD08A00070C1B /* MainViewController.h */,
+				18BF02911BCAD08A00070C1B /* MainViewController.m */,
+				18BF02661BCAD02600070C1B /* Main.storyboard */,
+				18BF02691BCAD02600070C1B /* Assets.xcassets */,
+				18BF026B1BCAD02600070C1B /* LaunchScreen.storyboard */,
+				18BF026E1BCAD02600070C1B /* Info.plist */,
+				18BF025D1BCAD02600070C1B /* Supporting Files */,
+			);
+			path = Deskka;
+			sourceTree = "<group>";
+		};
+		18BF025D1BCAD02600070C1B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18BF025E1BCAD02600070C1B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18BF02761BCAD02600070C1B /* DeskkaTests */ = {
+			isa = PBXGroup;
+			children = (
+				18BF02771BCAD02600070C1B /* DeskkaTests.m */,
+				18BF02791BCAD02600070C1B /* Info.plist */,
+			);
+			path = DeskkaTests;
+			sourceTree = "<group>";
+		};
+		18BF02811BCAD02600070C1B /* DeskkaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				18BF02821BCAD02600070C1B /* DeskkaUITests.m */,
+				18BF02841BCAD02600070C1B /* Info.plist */,
+			);
+			path = DeskkaUITests;
+			sourceTree = "<group>";
+		};
+		18BF02931BCAD0BD00070C1B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				18BF02941BCAD0BD00070C1B /* Fonts */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		18BF02941BCAD0BD00070C1B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18BF02951BCAD0BD00070C1B /* Geomanist-Bold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18BF02591BCAD02600070C1B /* Deskka */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18BF02871BCAD02600070C1B /* Build configuration list for PBXNativeTarget "Deskka" */;
+			buildPhases = (
+				18BF02561BCAD02600070C1B /* Sources */,
+				18BF02571BCAD02600070C1B /* Frameworks */,
+				18BF02581BCAD02600070C1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Deskka;
+			productName = Deskka;
+			productReference = 18BF025A1BCAD02600070C1B /* Deskka.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18BF02721BCAD02600070C1B /* DeskkaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18BF028A1BCAD02600070C1B /* Build configuration list for PBXNativeTarget "DeskkaTests" */;
+			buildPhases = (
+				18BF026F1BCAD02600070C1B /* Sources */,
+				18BF02701BCAD02600070C1B /* Frameworks */,
+				18BF02711BCAD02600070C1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18BF02751BCAD02600070C1B /* PBXTargetDependency */,
+			);
+			name = DeskkaTests;
+			productName = DeskkaTests;
+			productReference = 18BF02731BCAD02600070C1B /* DeskkaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		18BF027D1BCAD02600070C1B /* DeskkaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18BF028D1BCAD02600070C1B /* Build configuration list for PBXNativeTarget "DeskkaUITests" */;
+			buildPhases = (
+				18BF027A1BCAD02600070C1B /* Sources */,
+				18BF027B1BCAD02600070C1B /* Frameworks */,
+				18BF027C1BCAD02600070C1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18BF02801BCAD02600070C1B /* PBXTargetDependency */,
+			);
+			name = DeskkaUITests;
+			productName = DeskkaUITests;
+			productReference = 18BF027E1BCAD02600070C1B /* DeskkaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18BF02521BCAD02600070C1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = IndyZaLab;
+				TargetAttributes = {
+					18BF02591BCAD02600070C1B = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					18BF02721BCAD02600070C1B = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 18BF02591BCAD02600070C1B;
+					};
+					18BF027D1BCAD02600070C1B = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 18BF02591BCAD02600070C1B;
+					};
+				};
+			};
+			buildConfigurationList = 18BF02551BCAD02600070C1B /* Build configuration list for PBXProject "Deskka" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18BF02511BCAD02600070C1B;
+			productRefGroup = 18BF025B1BCAD02600070C1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18BF02591BCAD02600070C1B /* Deskka */,
+				18BF02721BCAD02600070C1B /* DeskkaTests */,
+				18BF027D1BCAD02600070C1B /* DeskkaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18BF02581BCAD02600070C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BF026D1BCAD02600070C1B /* LaunchScreen.storyboard in Resources */,
+				18BF026A1BCAD02600070C1B /* Assets.xcassets in Resources */,
+				18BF02961BCAD0BD00070C1B /* Geomanist-Bold.otf in Resources */,
+				18BF02681BCAD02600070C1B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BF02711BCAD02600070C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BF027C1BCAD02600070C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18BF02561BCAD02600070C1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */,
+				18BF025F1BCAD02600070C1B /* main.m in Sources */,
+				18BF02921BCAD08A00070C1B /* MainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BF026F1BCAD02600070C1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BF02781BCAD02600070C1B /* DeskkaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BF027A1BCAD02600070C1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BF02831BCAD02600070C1B /* DeskkaUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18BF02751BCAD02600070C1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18BF02591BCAD02600070C1B /* Deskka */;
+			targetProxy = 18BF02741BCAD02600070C1B /* PBXContainerItemProxy */;
+		};
+		18BF02801BCAD02600070C1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18BF02591BCAD02600070C1B /* Deskka */;
+			targetProxy = 18BF027F1BCAD02600070C1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18BF02661BCAD02600070C1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18BF02671BCAD02600070C1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18BF026B1BCAD02600070C1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18BF026C1BCAD02600070C1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18BF02851BCAD02600070C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18BF02861BCAD02600070C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18BF02881BCAD02600070C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Deskka/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.indyzalab.Deskka;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18BF02891BCAD02600070C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Deskka/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.indyzalab.Deskka;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		18BF028B1BCAD02600070C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DeskkaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.indyzalab.DeskkaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Deskka.app/Deskka";
+			};
+			name = Debug;
+		};
+		18BF028C1BCAD02600070C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DeskkaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.indyzalab.DeskkaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Deskka.app/Deskka";
+			};
+			name = Release;
+		};
+		18BF028E1BCAD02600070C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DeskkaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.indyzalab.DeskkaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Deskka;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		18BF028F1BCAD02600070C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DeskkaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.indyzalab.DeskkaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Deskka;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18BF02551BCAD02600070C1B /* Build configuration list for PBXProject "Deskka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BF02851BCAD02600070C1B /* Debug */,
+				18BF02861BCAD02600070C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18BF02871BCAD02600070C1B /* Build configuration list for PBXNativeTarget "Deskka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BF02881BCAD02600070C1B /* Debug */,
+				18BF02891BCAD02600070C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18BF028A1BCAD02600070C1B /* Build configuration list for PBXNativeTarget "DeskkaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BF028B1BCAD02600070C1B /* Debug */,
+				18BF028C1BCAD02600070C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18BF028D1BCAD02600070C1B /* Build configuration list for PBXNativeTarget "DeskkaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BF028E1BCAD02600070C1B /* Debug */,
+				18BF028F1BCAD02600070C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18BF02521BCAD02600070C1B /* Project object */;
+}
