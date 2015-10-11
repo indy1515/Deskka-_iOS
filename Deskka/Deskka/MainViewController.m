@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initializeVariable];
+    [self setupButton];
     [currentTableData addObject:[[Floor alloc]initWithName:@"6F" maxAmount:100 currentAvailable:85]];
     [currentTableData addObject:[[Floor alloc]initWithName:@"5F" maxAmount:100 currentAvailable:35]];
     [currentTableData addObject:[[Floor alloc]initWithName:@"4F" maxAmount:100 currentAvailable:17]];
@@ -38,6 +39,10 @@
 
 - (void) initializeVariable{
     currentTableData = [[NSMutableArray alloc] init];
+}
+
+- (void) setupButton{
+    [self.scanButton addTarget:self action:@selector(toScanViewController:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -95,6 +100,15 @@
     }
     
     return cell;
+}
+
+- (void) toScanViewController:(UIGestureRecognizer *)recognizer {
+    ScanViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ScanViewController"];
+    VC2.delegate = self;
+    [self presentViewController:VC2 animated:NO completion:^{
+        //  [loadingView startAnimating];
+        NSLog(@"completion fired");
+    }];
 }
 
 

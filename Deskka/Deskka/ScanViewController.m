@@ -22,12 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.contentView setNeedsLayout];
+    [self setupButton];
     // Do any additional setup after loading the view.
     if([self isCameraAvailable]) {
         [self setupScanner];
     }
     [self startScanning];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated;
@@ -41,18 +42,26 @@
 - (void) viewDidAppear:(BOOL)animated;
 {
     [super viewDidAppear:animated];
+    NSLog(@"ContentView2: %fx%f",self.contentView.frame.size.width, self.contentView.frame.size.height);
+    NSLog(@"ContentView2: %fx%f",self.contentView.frame.size.width, self.contentView.frame.size.height);
+
+    NSLog(@"View2: %fx%f",self.view.frame.size.width, self.view.frame.size.height);
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void) setupButton{
+    [self.cancelButton addTarget:self action:@selector(toMainViewController:) forControlEvents:UIControlEventTouchUpInside];
+}
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)evt
 {
-    NSLog(@"Touch ");
+    NSLog(@"Touch Focus: %i",self.touchToFocusEnabled);
     if(self.touchToFocusEnabled) {
         UITouch *touch=[touches anyObject];
-        CGPoint pt= [touch locationInView:self.view];
+        CGPoint pt= [touch locationInView:self.cameraView];
         [self focus:pt];
     }
 }
@@ -78,18 +87,12 @@
     self.preview = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
     self.preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
     self.preview.frame = CGRectMake(0, 0
-                                    , self.contentView.frame.size.width, self.contentView.frame.size.height);
-    NSLog(@"ContentView: %fx%f",self.contentView.frame.size.width, self.contentView.frame.size.height);
-    [self.lowerView setNeedsDisplay];
-    [self.contentView setNeedsLayout];
-    NSLog(@"ContentView: %fx%f",self.contentView.frame.size.width, self.contentView.frame.size.height);
-    NSLog(@"LowerView : %fx%f",self.lowerView.frame.size.width, self.lowerView.frame.size.height);
-    NSLog(@"View: %fx%f",self.view.frame.size.width, self.view.frame.size.height);
+                                    , self.view.frame.size.width, self.view.frame.size.height-150);
     AVCaptureConnection *con = self.preview.connection;
     
     con.videoOrientation = AVCaptureVideoOrientationPortrait;
     
-    [self.contentView.layer insertSublayer:self.preview atIndex:1];
+    [self.cameraView.layer insertSublayer:self.preview atIndex:1];
 }
 
 #pragma mark -
@@ -178,6 +181,13 @@
             }
         }
     }
+}
+
+
+
+- (void) toMainViewController:(UIGestureRecognizer *)recognizer{
+    [self.view endEditing:YES];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 /*
 #pragma mark - Navigation

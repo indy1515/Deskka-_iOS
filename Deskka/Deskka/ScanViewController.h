@@ -14,11 +14,11 @@
 @interface ScanViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIView *cameraView;
+@property (nonatomic, weak) id<ScanViewControllerDelegate>delegate;
 
-@property (weak, nonatomic) IBOutlet UIView *lowerView;
-@property (weak, nonatomic) IBOutlet UILabel *cancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
-@property (nonatomic, weak) id<ScanViewControllerDelegate> delegate;
 
 @property (assign, nonatomic) BOOL touchToFocusEnabled;
 

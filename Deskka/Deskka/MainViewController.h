@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScanViewController.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <ScanViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UILabel *scanButton;
-@property (weak, nonatomic) IBOutlet UILabel *bookButton;
+@property (weak, nonatomic) IBOutlet UIButton *scanButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *bookButton;
 
 @end
 
