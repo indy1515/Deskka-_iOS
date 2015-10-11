@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018C1BCB066E007853D4 /* ScanViewController.m */; settings = {ASSET_TAGS = (); }; };
 		18BF025F1BCAD02600070C1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF025E1BCAD02600070C1B /* main.m */; };
 		18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02611BCAD02600070C1B /* AppDelegate.m */; };
 		18BF02681BCAD02600070C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02661BCAD02600070C1B /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1814018B1BCB066E007853D4 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		1814018C1BCB066E007853D4 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		18BF025A1BCAD02600070C1B /* Deskka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deskka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF025E1BCAD02600070C1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18BF02601BCAD02600070C1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				18BF02611BCAD02600070C1B /* AppDelegate.m */,
 				18BF02901BCAD08A00070C1B /* MainViewController.h */,
 				18BF02911BCAD08A00070C1B /* MainViewController.m */,
+				1814018B1BCB066E007853D4 /* ScanViewController.h */,
+				1814018C1BCB066E007853D4 /* ScanViewController.m */,
 				18BF02661BCAD02600070C1B /* Main.storyboard */,
 				18BF026B1BCAD02600070C1B /* LaunchScreen.storyboard */,
 				18BF026E1BCAD02600070C1B /* Info.plist */,
@@ -337,6 +342,7 @@
 				18BF02A01BCAE09C00070C1B /* RoomStatusCell.m in Sources */,
 				18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */,
 				18BF025F1BCAD02600070C1B /* main.m in Sources */,
+				1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */,
 				18BF02A51BCAE49900070C1B /* Floor.m in Sources */,
 				18BF02921BCAD08A00070C1B /* MainViewController.m in Sources */,
 			);
@@ -564,6 +570,7 @@
 				18BF02891BCAD02600070C1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18BF028A1BCAD02600070C1B /* Build configuration list for PBXNativeTarget "DeskkaTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +579,7 @@
 				18BF028C1BCAD02600070C1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18BF028D1BCAD02600070C1B /* Build configuration list for PBXNativeTarget "DeskkaUITests" */ = {
 			isa = XCConfigurationList;
@@ -580,6 +588,7 @@
 				18BF028F1BCAD02600070C1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
