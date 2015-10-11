@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UILabel *scanButton;
+@property (weak, nonatomic) IBOutlet UILabel *bookButton;
 
 @end
 
