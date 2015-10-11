@@ -43,7 +43,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 70;
+    return 80;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -68,6 +68,9 @@
     cell.nameLabel.text = cellValue.name;
     cell.availableLabel.text = [NSString stringWithFormat:@"%i%%",(int)[cellValue getAvailablePercent]];
     [cell setBackgroundWithPercentage:(int)[cellValue getAvailablePercent]];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
 //    if(cellValue.isShown){
 //        [cell.viewButton setImage:[UIImage imageNamed:@"main_show"] forState:UIControlStateNormal];
 //        

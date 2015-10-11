@@ -19,6 +19,12 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+    if(selected){
+//        self.backgroundColor = [UIColor redColor];
+    }else{
+        self.backgroundColor = [UIColor clearColor];
+    }
+    
 }
 
 - (void) setBackgroundWithPercentage:(float) value{
