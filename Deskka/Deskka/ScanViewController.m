@@ -80,12 +80,16 @@
     self.preview.frame = CGRectMake(0, 0
                                     , self.contentView.frame.size.width, self.contentView.frame.size.height);
     NSLog(@"ContentView: %fx%f",self.contentView.frame.size.width, self.contentView.frame.size.height);
-    
+    [self.lowerView setNeedsDisplay];
+    [self.contentView setNeedsLayout];
+    NSLog(@"ContentView: %fx%f",self.contentView.frame.size.width, self.contentView.frame.size.height);
+    NSLog(@"LowerView : %fx%f",self.lowerView.frame.size.width, self.lowerView.frame.size.height);
+    NSLog(@"View: %fx%f",self.view.frame.size.width, self.view.frame.size.height);
     AVCaptureConnection *con = self.preview.connection;
     
     con.videoOrientation = AVCaptureVideoOrientationPortrait;
     
-    [self.view.layer insertSublayer:self.preview atIndex:1];
+    [self.contentView.layer insertSublayer:self.preview atIndex:1];
 }
 
 #pragma mark -
@@ -96,9 +100,9 @@
     UILabel *labelNoCam = [[UILabel alloc] init];
     labelNoCam.text = @"No Camera available";
     labelNoCam.textColor = [UIColor whiteColor];
-    [self.view addSubview:labelNoCam];
+    [self.contentView addSubview:labelNoCam];
     [labelNoCam sizeToFit];
-    labelNoCam.center = self.view.center;
+    labelNoCam.center = self.contentView.center;
 }
 
 

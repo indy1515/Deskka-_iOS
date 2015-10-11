@@ -725,7 +725,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czm-X3-ymk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                                 <subviews>
-                                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="btn_Lmain" translatesAutoresizingMaskIntoConstraints="NO" id="lfA-f3-AVK">
+                                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="btn_Lblue" translatesAutoresizingMaskIntoConstraints="NO" id="lfA-f3-AVK">
                                                                         <rect key="frame" x="0.0" y="-78" width="275" height="78"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CANCEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqW-0P-FXV" userLabel="Cancel Button">
@@ -871,7 +871,6 @@
                                     <constraint firstAttribute="bottom" secondItem="m6l-Q5-Ao9" secondAttribute="bottom" id="dny-s8-cwd"/>
                                     <constraint firstItem="4Hn-S7-inr" firstAttribute="leading" secondItem="Lwt-lp-j9Z" secondAttribute="leading" id="g6H-du-yDL"/>
                                     <constraint firstItem="m6l-Q5-Ao9" firstAttribute="width" secondItem="Lwt-lp-j9Z" secondAttribute="width" id="kSB-gD-NQr"/>
-                                    <constraint firstAttribute="width" constant="400" id="voB-gn-1CF"/>
                                     <constraint firstItem="m6l-Q5-Ao9" firstAttribute="top" secondItem="Lwt-lp-j9Z" secondAttribute="top" id="yre-Mw-MvG"/>
                                 </constraints>
                                 <variation key="default">
@@ -880,7 +879,6 @@
                                         <exclude reference="m6l-Q5-Ao9"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="voB-gn-1CF"/>
                                         <exclude reference="9sC-0j-Eyv"/>
                                         <exclude reference="cQh-bc-m5i"/>
                                         <exclude reference="g6H-du-yDL"/>
@@ -896,7 +894,6 @@
                                         <include reference="m6l-Q5-Ao9"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="voB-gn-1CF"/>
                                         <include reference="9sC-0j-Eyv"/>
                                         <include reference="cQh-bc-m5i"/>
                                         <include reference="g6H-du-yDL"/>
@@ -960,6 +957,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn_Lblue" width="275" height="75"/>
         <image name="btn_Lmain" width="275" height="78"/>
         <image name="btn_divider" width="2" height="59"/>
         <image name="logo" width="116" height="36"/>

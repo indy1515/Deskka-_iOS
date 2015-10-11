@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
+@property (weak, nonatomic) IBOutlet UIView *lowerView;
 @property (weak, nonatomic) IBOutlet UILabel *cancelButton;
 
 @property (nonatomic, weak) id<ScanViewControllerDelegate> delegate;
