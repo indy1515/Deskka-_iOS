@@ -10,7 +10,6 @@
 		18BF025F1BCAD02600070C1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF025E1BCAD02600070C1B /* main.m */; };
 		18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02611BCAD02600070C1B /* AppDelegate.m */; };
 		18BF02681BCAD02600070C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02661BCAD02600070C1B /* Main.storyboard */; };
-		18BF026A1BCAD02600070C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02691BCAD02600070C1B /* Assets.xcassets */; };
 		18BF026D1BCAD02600070C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF026B1BCAD02600070C1B /* LaunchScreen.storyboard */; };
 		18BF02781BCAD02600070C1B /* DeskkaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02771BCAD02600070C1B /* DeskkaTests.m */; };
 		18BF02831BCAD02600070C1B /* DeskkaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02821BCAD02600070C1B /* DeskkaUITests.m */; };
@@ -18,6 +17,9 @@
 		18BF02961BCAD0BD00070C1B /* Geomanist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02951BCAD0BD00070C1B /* Geomanist-Bold.otf */; settings = {ASSET_TAGS = (); }; };
 		18BF02A01BCAE09C00070C1B /* RoomStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF029E1BCAE09C00070C1B /* RoomStatusCell.m */; settings = {ASSET_TAGS = (); }; };
 		18BF02A11BCAE09C00070C1B /* RoomStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BF029F1BCAE09C00070C1B /* RoomStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
+		18BF02A51BCAE49900070C1B /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02A41BCAE49900070C1B /* Floor.m */; settings = {ASSET_TAGS = (); }; };
+		18BF02A71BCAE61B00070C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02A61BCAE61B00070C1B /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		18BF02AB1BCAEE6C00070C1B /* CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02AA1BCAEE6C00070C1B /* CustomColors.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,6 @@
 		18BF02601BCAD02600070C1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18BF02611BCAD02600070C1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18BF02671BCAD02600070C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		18BF02691BCAD02600070C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18BF026C1BCAD02600070C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18BF026E1BCAD02600070C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18BF02731BCAD02600070C1B /* DeskkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeskkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +59,11 @@
 		18BF029D1BCAE09C00070C1B /* RoomStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomStatusCell.h; sourceTree = "<group>"; };
 		18BF029E1BCAE09C00070C1B /* RoomStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomStatusCell.m; sourceTree = "<group>"; };
 		18BF029F1BCAE09C00070C1B /* RoomStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomStatusCell.xib; sourceTree = "<group>"; };
+		18BF02A31BCAE49900070C1B /* Floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Floor.h; sourceTree = "<group>"; };
+		18BF02A41BCAE49900070C1B /* Floor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Floor.m; sourceTree = "<group>"; };
+		18BF02A61BCAE61B00070C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18BF02A91BCAEE6C00070C1B /* CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomColors.h; sourceTree = "<group>"; };
+		18BF02AA1BCAEE6C00070C1B /* CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomColors.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 		18BF025C1BCAD02600070C1B /* Deskka */ = {
 			isa = PBXGroup;
 			children = (
+				18BF02A21BCAE46B00070C1B /* Object */,
 				18BF02971BCAE00D00070C1B /* Table */,
 				18BF02931BCAD0BD00070C1B /* Resource */,
 				18BF02601BCAD02600070C1B /* AppDelegate.h */,
@@ -115,9 +122,9 @@
 				18BF02901BCAD08A00070C1B /* MainViewController.h */,
 				18BF02911BCAD08A00070C1B /* MainViewController.m */,
 				18BF02661BCAD02600070C1B /* Main.storyboard */,
-				18BF02691BCAD02600070C1B /* Assets.xcassets */,
 				18BF026B1BCAD02600070C1B /* LaunchScreen.storyboard */,
 				18BF026E1BCAD02600070C1B /* Info.plist */,
+				18BF02A61BCAE61B00070C1B /* Assets.xcassets */,
 				18BF025D1BCAD02600070C1B /* Supporting Files */,
 			);
 			path = Deskka;
@@ -152,6 +159,7 @@
 		18BF02931BCAD0BD00070C1B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				18BF02A81BCAEE6C00070C1B /* Color */,
 				18BF02941BCAD0BD00070C1B /* Fonts */,
 			);
 			path = Resource;
@@ -173,6 +181,24 @@
 				18BF029F1BCAE09C00070C1B /* RoomStatusCell.xib */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		18BF02A21BCAE46B00070C1B /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				18BF02A31BCAE49900070C1B /* Floor.h */,
+				18BF02A41BCAE49900070C1B /* Floor.m */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		18BF02A81BCAEE6C00070C1B /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				18BF02A91BCAEE6C00070C1B /* CustomColors.h */,
+				18BF02AA1BCAEE6C00070C1B /* CustomColors.m */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,10 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BF026D1BCAD02600070C1B /* LaunchScreen.storyboard in Resources */,
-				18BF026A1BCAD02600070C1B /* Assets.xcassets in Resources */,
 				18BF02961BCAD0BD00070C1B /* Geomanist-Bold.otf in Resources */,
 				18BF02681BCAD02600070C1B /* Main.storyboard in Resources */,
 				18BF02A11BCAE09C00070C1B /* RoomStatusCell.xib in Resources */,
+				18BF02A71BCAE61B00070C1B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,9 +333,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BF02AB1BCAEE6C00070C1B /* CustomColors.m in Sources */,
 				18BF02A01BCAE09C00070C1B /* RoomStatusCell.m in Sources */,
 				18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */,
 				18BF025F1BCAD02600070C1B /* main.m in Sources */,
+				18BF02A51BCAE49900070C1B /* Floor.m in Sources */,
 				18BF02921BCAD08A00070C1B /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

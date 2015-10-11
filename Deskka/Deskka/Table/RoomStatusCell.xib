@@ -13,11 +13,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomStatusCell" rowHeight="70" id="KGk-i7-Jjw" customClass="RoomStatusCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomStatusCell" rowHeight="80" id="KGk-i7-Jjw" customClass="RoomStatusCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V72-eM-ZNV" userLabel="BackgroundView">
@@ -45,14 +45,21 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="V72-eM-ZNV" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="3M2-6v-WKs"/>
                     <constraint firstItem="V72-eM-ZNV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Aja-N3-O5R"/>
                     <constraint firstItem="V72-eM-ZNV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Wyn-z0-b1e"/>
-                    <constraint firstItem="V72-eM-ZNV" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="hGJ-BC-Lm9"/>
+                    <constraint firstAttribute="bottom" secondItem="V72-eM-ZNV" secondAttribute="bottom" constant="10" id="jQ3-xr-KLn"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="245" y="255"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="availableLabel" destination="EMu-xb-TkH" id="peu-wT-HPr"/>
+                <outlet property="backgroundView" destination="V72-eM-ZNV" id="dfp-8s-cNJ"/>
+                <outlet property="nameLabel" destination="TKA-Sj-0Fs" id="jl1-nx-v8P"/>
+            </connections>
+            <point key="canvasLocation" x="245" y="260"/>
         </tableViewCell>
     </objects>
 </document>
