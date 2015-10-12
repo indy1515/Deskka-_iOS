@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018C1BCB066E007853D4 /* ScanViewController.m */; settings = {ASSET_TAGS = (); }; };
+		181401901BCB2179007853D4 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018F1BCB2179007853D4 /* Room.m */; settings = {ASSET_TAGS = (); }; };
+		181401931BCB80D2007853D4 /* FloorStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181401921BCB80D2007853D4 /* FloorStatusViewController.m */; settings = {ASSET_TAGS = (); }; };
 		18BF025F1BCAD02600070C1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF025E1BCAD02600070C1B /* main.m */; };
 		18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02611BCAD02600070C1B /* AppDelegate.m */; };
 		18BF02681BCAD02600070C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02661BCAD02600070C1B /* Main.storyboard */; };
@@ -43,6 +45,10 @@
 /* Begin PBXFileReference section */
 		1814018B1BCB066E007853D4 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		1814018C1BCB066E007853D4 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		1814018E1BCB2179007853D4 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		1814018F1BCB2179007853D4 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		181401911BCB80D2007853D4 /* FloorStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorStatusViewController.h; sourceTree = "<group>"; };
+		181401921BCB80D2007853D4 /* FloorStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorStatusViewController.m; sourceTree = "<group>"; };
 		18BF025A1BCAD02600070C1B /* Deskka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deskka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF025E1BCAD02600070C1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18BF02601BCAD02600070C1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 				18BF02911BCAD08A00070C1B /* MainViewController.m */,
 				1814018B1BCB066E007853D4 /* ScanViewController.h */,
 				1814018C1BCB066E007853D4 /* ScanViewController.m */,
+				181401911BCB80D2007853D4 /* FloorStatusViewController.h */,
+				181401921BCB80D2007853D4 /* FloorStatusViewController.m */,
 				18BF02661BCAD02600070C1B /* Main.storyboard */,
 				18BF026B1BCAD02600070C1B /* LaunchScreen.storyboard */,
 				18BF026E1BCAD02600070C1B /* Info.plist */,
@@ -193,6 +201,8 @@
 			children = (
 				18BF02A31BCAE49900070C1B /* Floor.h */,
 				18BF02A41BCAE49900070C1B /* Floor.m */,
+				1814018E1BCB2179007853D4 /* Room.h */,
+				1814018F1BCB2179007853D4 /* Room.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -342,8 +352,10 @@
 				18BF02A01BCAE09C00070C1B /* RoomStatusCell.m in Sources */,
 				18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */,
 				18BF025F1BCAD02600070C1B /* main.m in Sources */,
+				181401931BCB80D2007853D4 /* FloorStatusViewController.m in Sources */,
 				1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */,
 				18BF02A51BCAE49900070C1B /* Floor.m in Sources */,
+				181401901BCB2179007853D4 /* Room.m in Sources */,
 				18BF02921BCAD08A00070C1B /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

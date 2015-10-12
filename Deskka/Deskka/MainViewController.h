@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ScanViewController.h"
+#import "FloorStatusViewController.h"
 
-@interface MainViewController : UIViewController <ScanViewControllerDelegate>
+@interface MainViewController : UIViewController <ScanViewControllerDelegate,FloorStatusViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIButton *scanButton;

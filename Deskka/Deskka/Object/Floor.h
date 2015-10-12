@@ -10,8 +10,8 @@
 
 @interface Floor : NSObject
 
+@property int floorId;
 @property NSString* name;
-
 @property int max_amount;
 @property int current_available;
 

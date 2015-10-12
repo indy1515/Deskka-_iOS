@@ -102,8 +102,23 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger rowNo = indexPath.row;
+    [self toFloorStatusViewController:nil];
+}
+
 - (void) toScanViewController:(UIGestureRecognizer *)recognizer {
     ScanViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ScanViewController"];
+    VC2.delegate = self;
+    [self presentViewController:VC2 animated:NO completion:^{
+        //  [loadingView startAnimating];
+        NSLog(@"completion fired");
+    }];
+}
+
+- (void) toFloorStatusViewController:(UIGestureRecognizer *)recognizer {
+    FloorStatusViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"FloorStatusViewController"];
     VC2.delegate = self;
     [self presentViewController:VC2 animated:NO completion:^{
         //  [loadingView startAnimating];
