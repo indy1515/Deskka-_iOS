@@ -120,12 +120,14 @@
 
 - (void)startScanning;
 {
+    NSLog(@"Start Scanning");
     [self.session startRunning];
     
 }
 
 - (void) stopScanning;
 {
+    NSLog(@"Stop Scanning");
     [self.session stopRunning];
 }
 
@@ -173,17 +175,77 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects
        fromConnection:(AVCaptureConnection *)connection
 {
-    for(AVMetadataObject *current in metadataObjects) {
-        if([current isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
-            if([self.delegate respondsToSelector:@selector(scanViewController:didSuccessfullyScan:)]) {
-                NSString *scannedValue = [((AVMetadataMachineReadableCodeObject *) current) stringValue];
-                [self.delegate scanViewController:self didSuccessfullyScan:scannedValue];
-            }
+    NSLog(@"Try Capturing");
+    for (AVMetadataObject *metadata in metadataObjects) {
+        if ([metadata.type isEqualToString:AVMetadataObjectTypeQRCode]) {
+            AVMetadataMachineReadableCodeObject *transformed = (AVMetadataMachineReadableCodeObject *)metadata;
+            // Update the view with the decoded text
+            NSLog(@"Scan Value Capture:%@",[transformed stringValue]);
+            NSString *scannedString = [transformed stringValue];
+            [self scanViewController:self didSuccessfullyScan:scannedString];
+            
+            
         }
     }
+
+}
+
+- (void) scanViewController:(ScanViewController *) aCtler didSuccessfullyScan:(NSString *) aScannedValue{
+    NSLog(@"Scan Value:%@",aScannedValue);
+    
+}
+
+- (void) processScanValue:(NSString *) aScannedValue{
+    // Stop scanning camera
+    [self stopScanning];
+    // Check if it is an id or not
+    if([self isCorrectFormat:aScannedValue]){
+        // freeze camera
+        // send id to database
+        [self postRegisterDesk:aScannedValue];
+    }else{
+        // Start scanning
+        [self startScanning];
+    }
+    
 }
 
 
+#pragma mark - Internet Connection
+
+/**
+ * Post function for register desk
+ **/
+- (void) postRegisterTable:(NSString *) deskId{
+    // assume we get the link data here
+    
+    
+    // data is recieve and allow for usage
+    // Recieve desk data
+    Desk* desk = [[Desk alloc] initWithDeskId:[deskId intValue] roomId:1 isAvailable:true];
+    
+    
+
+    
+}
+
+- (void) processRecievedRegistrationData{
+    
+}
+
+
+/**
+ * Check if it is a coorect id
+ */
+- (BOOL) isCorrectFormat:(NSString *) aString{
+    return [self stringIsNumeric:aString];
+}
+
+-(BOOL) stringIsNumeric:(NSString *) str {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    NSNumber *number = [formatter numberFromString:str];
+    return !!number; // If the string is not numeric, number will be nil
+}
 
 - (void) toMainViewController:(UIGestureRecognizer *)recognizer{
     [self.view endEditing:YES];
