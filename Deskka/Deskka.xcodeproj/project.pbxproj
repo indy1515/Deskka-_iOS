@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018C1BCB066E007853D4 /* ScanViewController.m */; };
 		181401901BCB2179007853D4 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018F1BCB2179007853D4 /* Room.m */; };
 		181401931BCB80D2007853D4 /* FloorStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181401921BCB80D2007853D4 /* FloorStatusViewController.m */; };
@@ -19,6 +20,11 @@
 		181401931BCB80D2007853D4 /* FloorStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181401921BCB80D2007853D4 /* FloorStatusViewController.m */; };
 		18362B861C1C0B8300023697 /* Desk.m in Sources */ = {isa = PBXBuildFile; fileRef = 18362B851C1C0B8300023697 /* Desk.m */; };
 >>>>>>> origin/master
+=======
+		1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018C1BCB066E007853D4 /* ScanViewController.m */; settings = {ASSET_TAGS = (); }; };
+		181401901BCB2179007853D4 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018F1BCB2179007853D4 /* Room.m */; settings = {ASSET_TAGS = (); }; };
+		181401931BCB80D2007853D4 /* FloorStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181401921BCB80D2007853D4 /* FloorStatusViewController.m */; settings = {ASSET_TAGS = (); }; };
+>>>>>>> parent of 9401c8d... UI updates
 =======
 		1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018C1BCB066E007853D4 /* ScanViewController.m */; settings = {ASSET_TAGS = (); }; };
 		181401901BCB2179007853D4 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018F1BCB2179007853D4 /* Room.m */; settings = {ASSET_TAGS = (); }; };
@@ -574,11 +580,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 <<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 9401c8d... UI updates
 =======
 >>>>>>> parent of 9401c8d... UI updates
 				INFOPLIST_FILE = Deskka/Info.plist;
@@ -595,11 +604,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 <<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 9401c8d... UI updates
 =======
 >>>>>>> parent of 9401c8d... UI updates
 				INFOPLIST_FILE = Deskka/Info.plist;

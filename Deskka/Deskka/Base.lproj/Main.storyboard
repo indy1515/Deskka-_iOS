@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iJw-Hz-Ooc">
     <dependencies>
         <deployment identifier="iOS"/>
@@ -13,6 +14,12 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
 >>>>>>> origin/master
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+>>>>>>> parent of 9401c8d... UI updates
 =======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
@@ -36,6 +43,7 @@
             <string>Geomanist-Bold</string>
             <string>Geomanist-Bold</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <string>Geomanist-Bold</string>
             <string>Geomanist-Bold</string>
             <string>Geomanist-Bold</string>
@@ -51,6 +59,8 @@
             <string>Geomanist-Bold</string>
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 9401c8d... UI updates
 =======
 >>>>>>> parent of 9401c8d... UI updates
         </mutableArray>
@@ -1166,12 +1176,16 @@
                                                 <exclude reference="Qjc-ay-PmD"/>
                                                 <exclude reference="tYt-HG-b90"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                                                 <exclude reference="5vY-H3-hwc"/>
                                                 <exclude reference="P9T-Vy-Xb3"/>
                                                 <exclude reference="eVS-GY-TYo"/>
                                                 <exclude reference="lHl-k6-J2x"/>
 >>>>>>> origin/master
+=======
+                                                <exclude reference="Bw7-B1-b2h"/>
+>>>>>>> parent of 9401c8d... UI updates
 =======
                                                 <exclude reference="Bw7-B1-b2h"/>
 >>>>>>> parent of 9401c8d... UI updates
@@ -1187,12 +1201,16 @@
                                                 <include reference="Qjc-ay-PmD"/>
                                                 <include reference="tYt-HG-b90"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                                                 <include reference="5vY-H3-hwc"/>
                                                 <include reference="P9T-Vy-Xb3"/>
                                                 <include reference="eVS-GY-TYo"/>
                                                 <include reference="lHl-k6-J2x"/>
 >>>>>>> origin/master
+=======
+                                                <include reference="Bw7-B1-b2h"/>
+>>>>>>> parent of 9401c8d... UI updates
 =======
                                                 <include reference="Bw7-B1-b2h"/>
 >>>>>>> parent of 9401c8d... UI updates
@@ -1471,6 +1489,7 @@
                                                         <include reference="0og-w0-Lgh"/>
                                                         <include reference="AeA-Ud-y5y"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                         <include reference="jEx-sF-NyN"/>
 <<<<<<< HEAD
 =======
@@ -1590,6 +1609,8 @@
                                                         <include reference="Lyl-oh-HCQ"/>
                                                         <include reference="wGX-4r-LRV"/>
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 9401c8d... UI updates
 =======
 >>>>>>> parent of 9401c8d... UI updates
                                                     </mask>
