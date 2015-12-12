@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Room.h"
 @interface Floor : NSObject
 
 @property int floorId;
 @property NSString* name;
 @property int max_amount;
 @property int current_available;
+@property NSMutableArray* roomArray;
 
 
 - (id) initWithName:(NSString *) newName maxAmount:(int) newMaxAmount currentAvailable:(int) newCurrentAvailableAmount;

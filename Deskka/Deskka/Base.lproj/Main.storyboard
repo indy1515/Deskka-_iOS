@@ -31,6 +31,7 @@
             <string>Geomanist-Bold</string>
             <string>Geomanist-Bold</string>
             <string>Geomanist-Bold</string>
+            <string>Geomanist-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -1719,7 +1720,7 @@
         <!--Notice View Controller-->
         <scene sceneID="iYY-Ir-Z5w">
             <objects>
-                <viewController title="NoticeViewController" id="msB-lD-zdD" userLabel="Notice View Controller" customClass="NoticeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoticeViewController" title="NoticeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="msB-lD-zdD" userLabel="Notice View Controller" customClass="NoticeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dr9-sC-CRZ"/>
                         <viewControllerLayoutGuide type="bottom" id="e6L-bF-WSU"/>
@@ -1789,61 +1790,53 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zsc-Xn-iOy" userLabel="TextView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfY-AP-U8w" userLabel="textMain">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAo-Zy-tIj">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="BQx-D5-Aw6"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="Bb1-l8-Vzl" userLabel="width ≤ 320"/>
+                                            <constraint firstAttribute="height" constant="100" id="5ZC-YT-CFW"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="QY1-Ve-gt8"/>
                                         </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="BOOKING CANCELED">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="40" name="Geomanist-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="BQx-D5-Aw6"/>
-                                                <exclude reference="Bb1-l8-Vzl"/>
+                                                <exclude reference="5ZC-YT-CFW"/>
+                                                <exclude reference="QY1-Ve-gt8"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <mask key="constraints">
-                                                <include reference="BQx-D5-Aw6"/>
-                                                <include reference="Bb1-l8-Vzl"/>
+                                                <include reference="5ZC-YT-CFW"/>
+                                                <include reference="QY1-Ve-gt8"/>
                                             </mask>
                                         </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="PfY-AP-U8w" firstAttribute="centerY" secondItem="Zsc-Xn-iOy" secondAttribute="centerY" id="WSw-Y3-hhK"/>
+                                    <constraint firstItem="vAo-Zy-tIj" firstAttribute="centerX" secondItem="Zsc-Xn-iOy" secondAttribute="centerX" id="GxC-oC-k0o"/>
+                                    <constraint firstItem="vAo-Zy-tIj" firstAttribute="centerY" secondItem="Zsc-Xn-iOy" secondAttribute="centerY" id="SV3-pK-YlG"/>
                                     <constraint firstAttribute="height" constant="200" id="a7w-TJ-73K"/>
-                                    <constraint firstItem="PfY-AP-U8w" firstAttribute="centerX" secondItem="Zsc-Xn-iOy" secondAttribute="centerX" id="kGv-gG-T4B"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="PfY-AP-U8w"/>
+                                        <exclude reference="vAo-Zy-tIj"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="a7w-TJ-73K"/>
-                                        <exclude reference="WSw-Y3-hhK"/>
-                                        <exclude reference="kGv-gG-T4B"/>
+                                        <exclude reference="GxC-oC-k0o"/>
+                                        <exclude reference="SV3-pK-YlG"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
-                                        <include reference="PfY-AP-U8w"/>
+                                        <include reference="vAo-Zy-tIj"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="a7w-TJ-73K"/>
-                                        <include reference="WSw-Y3-hhK"/>
-                                        <include reference="kGv-gG-T4B"/>
+                                        <include reference="GxC-oC-k0o"/>
+                                        <include reference="SV3-pK-YlG"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1901,6 +1894,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="okButton" destination="lSA-JS-f60" id="tno-Y0-08b"/>
+                        <outlet property="titleLabel" destination="vAo-Zy-tIj" id="4gc-fg-WRf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNC-l5-NRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1909,7 +1906,7 @@
         <!--Check In View-->
         <scene sceneID="Hrf-GA-jvC">
             <objects>
-                <viewController storyboardIdentifier="'" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iJw-Hz-Ooc" userLabel="Check In View" customClass="CheckInStatusViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckInStatusViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iJw-Hz-Ooc" userLabel="Check In View" customClass="CheckInStatusViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9df-5Y-HiX"/>
                         <viewControllerLayoutGuide type="bottom" id="KOA-XD-zND"/>

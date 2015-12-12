@@ -220,13 +220,20 @@
 - (void) postRegisterDesk:(NSString *) deskId{
     // assume we get the link data here
     
+    //TODO: Check desk availability in network
+    
     
     // data is recieve and allow for usage
     // Recieve desk data
     Desk* desk = [[Desk alloc] initWithDeskId:[deskId intValue] roomId:1 isAvailable:true];
-    [self toCheckInNoticeViewController:desk];
+    if(desk.isAvailable){
+        //TODO: Post isAvailable to network
+        
+        [self toCheckInNoticeViewController:desk];
+    }else{
+        //TODO: Notified user that it is not available
+    }
     
-
     
 }
 

@@ -11,6 +11,7 @@
 #import "Floor.h"
 #import "RoomStatusCell.h"
 #import "CustomColors.h"
+#import "NoticeViewController.h"
 
 @class CheckInStatusViewController;
 
@@ -19,7 +20,7 @@
 
 @end
 
-@interface CheckInStatusViewController : UIViewController
+@interface CheckInStatusViewController : UIViewController<NoticeViewControllerDelegate>
 
 @property (nonatomic, weak) id<CheckInStatusViewControllerDelegate>delegate;
 

@@ -23,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initializeData];
+    [self onClickSetup];
     [currentTableData addObject:[[Floor alloc]initWithName:@"6F" maxAmount:100 currentAvailable:85]];
     [currentTableData addObject:[[Floor alloc]initWithName:@"5F" maxAmount:100 currentAvailable:35]];
     [currentTableData addObject:[[Floor alloc]initWithName:@"4F" maxAmount:100 currentAvailable:17]];
@@ -39,7 +40,24 @@
 }
 
 
+#pragma mark - setup
 
+- (void) onClickSetup{
+    [self.checkoutButton addTarget:self action:@selector(onClickCheckout:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - onClick
+
+- (void) onClickCheckout:(UIGestureRecognizer *) recognizer{
+    
+    //TODO: Check out from network
+    
+    [self toNoticeViewController:@"CHECK OUT"];
+}
+
+#pragma mark - Automation
+
+//TODO: Countdown Automation - when timeout post done to internet
 
 #pragma mark - Table
 
@@ -108,6 +126,18 @@
 
 
 
+
+
+#pragma mark - Navigation
+- (void) toNoticeViewController:(NSString *) titleString {
+    NoticeViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"NoticeViewController"];
+    VC2.delegate = self;
+    VC2.titleString = titleString;
+    [self presentViewController:VC2 animated:YES completion:^{
+        //  [loadingView startAnimating];
+        NSLog(@"completion fired");
+    }];
+}
 
 
 

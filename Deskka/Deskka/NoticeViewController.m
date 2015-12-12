@@ -16,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initializeSetup];
+    
+    
+    [self setupOnClick];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +29,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Setup
+
+- (void) initializeSetup{
+    if(self.titleString != nil){
+        [self.titleLabel setText:self.titleString];
+        [self.titleLabel setFont:[UIFont fontWithName:@"Geomanist-Bold" size:40]];
+    }
+}
+
+- (void) setupOnClick{
+    [self.okButton addTarget:self action:@selector(onClickOkButton:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - onClick
+
+- (void) onClickOkButton:(UIGestureRecognizer *) recognizer{
+    [self toMainViewController:nil];
+}
+
+
+
+- (void) toMainViewController:(UIGestureRecognizer *)recognizer{
+    [self.view endEditing:YES];
+    [self.presentingViewController.presentingViewController.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:NO completion:nil];
+}
 /*
 #pragma mark - Navigation
 

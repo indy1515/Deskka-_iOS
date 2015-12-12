@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Room.h"
 
 @interface Desk : NSObject
 
 @property int deskId;
 @property int roomId;
 @property BOOL isAvailable;
+@property Room *room;
 
 
 -(id) initWithDeskId:(int) newDeskId roomId:(int) newRoomId;

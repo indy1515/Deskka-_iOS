@@ -23,10 +23,13 @@
     [super viewDidLoad];
     [self initializeVariable];
     [self setupButton];
+    //TODO: Fetch all floor data and room for calculation
     [currentTableData addObject:[[Floor alloc]initWithName:@"6F" maxAmount:100 currentAvailable:85]];
     [currentTableData addObject:[[Floor alloc]initWithName:@"5F" maxAmount:100 currentAvailable:35]];
     [currentTableData addObject:[[Floor alloc]initWithName:@"4F" maxAmount:100 currentAvailable:17]];
     [currentTableData addObject:[[Floor alloc]initWithName:@"3F" maxAmount:100 currentAvailable:6]];
+    
+    
 //    [self.tableView reloadData];
     // Do any additional setup after loading the view, typically from a nib.
 }
