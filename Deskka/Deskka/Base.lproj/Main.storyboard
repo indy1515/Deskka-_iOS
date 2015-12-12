@@ -1523,10 +1523,10 @@
             </objects>
             <point key="canvasLocation" x="1203" y="72.75"/>
         </scene>
-        <!--Alert Blue View Controller-->
+        <!--CheckIn Notice View Controller-->
         <scene sceneID="XaR-pe-M3Z">
             <objects>
-                <viewController id="IU6-LR-bhL" userLabel="Alert Blue View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckInNoticeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IU6-LR-bhL" userLabel="CheckIn Notice View Controller" customClass="CheckInNoticeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="77f-IC-Cd5"/>
                         <viewControllerLayoutGuide type="bottom" id="sJ4-ZA-dhE"/>
@@ -1705,15 +1705,21 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="kaz-CS-Xcs" id="DGR-xQ-SAj"/>
+                        <outlet property="okButton" destination="WMP-BT-ByD" id="nEu-Qg-O7q"/>
+                        <outlet property="timeLabel" destination="Qpn-NZ-fOE" id="yQc-cl-8G2"/>
+                        <outlet property="titleLabel" destination="YHK-Pd-0xY" id="ccq-7a-ryP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iek-1v-Wkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2085" y="-188.25"/>
         </scene>
-        <!--Alert Orange View Controller-->
+        <!--Notice View Controller-->
         <scene sceneID="iYY-Ir-Z5w">
             <objects>
-                <viewController id="msB-lD-zdD" userLabel="Alert Orange View Controller" sceneMemberID="viewController">
+                <viewController title="NoticeViewController" id="msB-lD-zdD" userLabel="Notice View Controller" customClass="NoticeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dr9-sC-CRZ"/>
                         <viewControllerLayoutGuide type="bottom" id="e6L-bF-WSU"/>
@@ -1903,7 +1909,7 @@
         <!--Check In View-->
         <scene sceneID="Hrf-GA-jvC">
             <objects>
-                <viewController id="iJw-Hz-Ooc" userLabel="Check In View" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="'" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iJw-Hz-Ooc" userLabel="Check In View" customClass="CheckInStatusViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9df-5Y-HiX"/>
                         <viewControllerLayoutGuide type="bottom" id="KOA-XD-zND"/>
@@ -2437,6 +2443,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="checkoutButton" destination="cRj-Jp-6Vr" id="YHQ-Jo-jtA"/>
                         <outlet property="tableView" destination="o2e-dS-v4j" id="gTc-L2-RXy"/>
                     </connections>
                 </viewController>

@@ -192,6 +192,7 @@
 
 - (void) scanViewController:(ScanViewController *) aCtler didSuccessfullyScan:(NSString *) aScannedValue{
     NSLog(@"Scan Value:%@",aScannedValue);
+    [self processScanValue:aScannedValue];
     
 }
 
