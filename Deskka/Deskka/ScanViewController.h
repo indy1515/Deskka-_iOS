@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "Desk.h"
+#import "CheckInNoticeViewController.h"
 
 @protocol ScanViewControllerDelegate;
 
-@interface ScanViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
+@interface ScanViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate,CheckInNoticeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
