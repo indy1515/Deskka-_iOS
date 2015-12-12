@@ -216,14 +216,14 @@
 /**
  * Post function for register desk
  **/
-- (void) postRegisterTable:(NSString *) deskId{
+- (void) postRegisterDesk:(NSString *) deskId{
     // assume we get the link data here
     
     
     // data is recieve and allow for usage
     // Recieve desk data
     Desk* desk = [[Desk alloc] initWithDeskId:[deskId intValue] roomId:1 isAvailable:true];
-    
+    [self toCheckInNoticeViewController:desk];
     
 
     
@@ -246,6 +246,17 @@
     NSNumber *number = [formatter numberFromString:str];
     return !!number; // If the string is not numeric, number will be nil
 }
+
+- (void) toCheckInNoticeViewController:(Desk *) desk{
+    CheckInNoticeViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"CheckInNoticeViewController"];
+    VC2.delegate = self;
+    VC2.currentDesk = desk;
+    [self presentViewController:VC2 animated:NO completion:^{
+        //  [loadingView startAnimating];
+        NSLog(@"completion fired");
+    }];
+}
+
 
 - (void) toMainViewController:(UIGestureRecognizer *)recognizer{
     [self.view endEditing:YES];
