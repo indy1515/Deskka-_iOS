@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018C1BCB066E007853D4 /* ScanViewController.m */; };
 		181401901BCB2179007853D4 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018F1BCB2179007853D4 /* Room.m */; };
 		181401931BCB80D2007853D4 /* FloorStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181401921BCB80D2007853D4 /* FloorStatusViewController.m */; };
@@ -18,19 +19,24 @@
 		181401931BCB80D2007853D4 /* FloorStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181401921BCB80D2007853D4 /* FloorStatusViewController.m */; };
 		18362B861C1C0B8300023697 /* Desk.m in Sources */ = {isa = PBXBuildFile; fileRef = 18362B851C1C0B8300023697 /* Desk.m */; };
 >>>>>>> origin/master
+=======
+		1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018C1BCB066E007853D4 /* ScanViewController.m */; settings = {ASSET_TAGS = (); }; };
+		181401901BCB2179007853D4 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018F1BCB2179007853D4 /* Room.m */; settings = {ASSET_TAGS = (); }; };
+		181401931BCB80D2007853D4 /* FloorStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181401921BCB80D2007853D4 /* FloorStatusViewController.m */; settings = {ASSET_TAGS = (); }; };
+>>>>>>> parent of 9401c8d... UI updates
 		18BF025F1BCAD02600070C1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF025E1BCAD02600070C1B /* main.m */; };
 		18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02611BCAD02600070C1B /* AppDelegate.m */; };
 		18BF02681BCAD02600070C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02661BCAD02600070C1B /* Main.storyboard */; };
 		18BF026D1BCAD02600070C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF026B1BCAD02600070C1B /* LaunchScreen.storyboard */; };
 		18BF02781BCAD02600070C1B /* DeskkaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02771BCAD02600070C1B /* DeskkaTests.m */; };
 		18BF02831BCAD02600070C1B /* DeskkaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02821BCAD02600070C1B /* DeskkaUITests.m */; };
-		18BF02921BCAD08A00070C1B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02911BCAD08A00070C1B /* MainViewController.m */; };
-		18BF02961BCAD0BD00070C1B /* Geomanist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02951BCAD0BD00070C1B /* Geomanist-Bold.otf */; };
-		18BF02A01BCAE09C00070C1B /* RoomStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF029E1BCAE09C00070C1B /* RoomStatusCell.m */; };
-		18BF02A11BCAE09C00070C1B /* RoomStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BF029F1BCAE09C00070C1B /* RoomStatusCell.xib */; };
-		18BF02A51BCAE49900070C1B /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02A41BCAE49900070C1B /* Floor.m */; };
-		18BF02A71BCAE61B00070C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02A61BCAE61B00070C1B /* Assets.xcassets */; };
-		18BF02AB1BCAEE6C00070C1B /* CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02AA1BCAEE6C00070C1B /* CustomColors.m */; };
+		18BF02921BCAD08A00070C1B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02911BCAD08A00070C1B /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
+		18BF02961BCAD0BD00070C1B /* Geomanist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02951BCAD0BD00070C1B /* Geomanist-Bold.otf */; settings = {ASSET_TAGS = (); }; };
+		18BF02A01BCAE09C00070C1B /* RoomStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF029E1BCAE09C00070C1B /* RoomStatusCell.m */; settings = {ASSET_TAGS = (); }; };
+		18BF02A11BCAE09C00070C1B /* RoomStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BF029F1BCAE09C00070C1B /* RoomStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
+		18BF02A51BCAE49900070C1B /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02A41BCAE49900070C1B /* Floor.m */; settings = {ASSET_TAGS = (); }; };
+		18BF02A71BCAE61B00070C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02A61BCAE61B00070C1B /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		18BF02AB1BCAEE6C00070C1B /* CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02AA1BCAEE6C00070C1B /* CustomColors.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -320,7 +326,6 @@
 				TargetAttributes = {
 					18BF02591BCAD02600070C1B = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 6CX4VCTG9V;
 					};
 					18BF02721BCAD02600070C1B = {
 						CreatedOnToolsVersion = 7.0;
@@ -568,17 +573,19 @@
 			baseConfigurationReference = 683F6E94B5CC042A25D34700 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 <<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 9401c8d... UI updates
 				INFOPLIST_FILE = Deskka/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.indyzalab.Deskka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -587,17 +594,19 @@
 			baseConfigurationReference = 5B3EE64D4075D24BBBB75D93 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 <<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 9401c8d... UI updates
 				INFOPLIST_FILE = Deskka/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.indyzalab.Deskka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
