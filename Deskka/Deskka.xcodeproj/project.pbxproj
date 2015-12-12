@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018C1BCB066E007853D4 /* ScanViewController.m */; settings = {ASSET_TAGS = (); }; };
-		181401901BCB2179007853D4 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018F1BCB2179007853D4 /* Room.m */; settings = {ASSET_TAGS = (); }; };
-		181401931BCB80D2007853D4 /* FloorStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181401921BCB80D2007853D4 /* FloorStatusViewController.m */; settings = {ASSET_TAGS = (); }; };
+		03EFFC157C5F34648334593A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3D1A08D6440EB5388DC10B /* libPods.a */; };
+		1814018D1BCB066E007853D4 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018C1BCB066E007853D4 /* ScanViewController.m */; };
+		181401901BCB2179007853D4 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814018F1BCB2179007853D4 /* Room.m */; };
+		181401931BCB80D2007853D4 /* FloorStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181401921BCB80D2007853D4 /* FloorStatusViewController.m */; };
+		18362B861C1C0B8300023697 /* Desk.m in Sources */ = {isa = PBXBuildFile; fileRef = 18362B851C1C0B8300023697 /* Desk.m */; };
 		18BF025F1BCAD02600070C1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF025E1BCAD02600070C1B /* main.m */; };
 		18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02611BCAD02600070C1B /* AppDelegate.m */; };
 		18BF02681BCAD02600070C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02661BCAD02600070C1B /* Main.storyboard */; };
 		18BF026D1BCAD02600070C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF026B1BCAD02600070C1B /* LaunchScreen.storyboard */; };
 		18BF02781BCAD02600070C1B /* DeskkaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02771BCAD02600070C1B /* DeskkaTests.m */; };
 		18BF02831BCAD02600070C1B /* DeskkaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02821BCAD02600070C1B /* DeskkaUITests.m */; };
-		18BF02921BCAD08A00070C1B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02911BCAD08A00070C1B /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
-		18BF02961BCAD0BD00070C1B /* Geomanist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02951BCAD0BD00070C1B /* Geomanist-Bold.otf */; settings = {ASSET_TAGS = (); }; };
-		18BF02A01BCAE09C00070C1B /* RoomStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF029E1BCAE09C00070C1B /* RoomStatusCell.m */; settings = {ASSET_TAGS = (); }; };
-		18BF02A11BCAE09C00070C1B /* RoomStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BF029F1BCAE09C00070C1B /* RoomStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
-		18BF02A51BCAE49900070C1B /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02A41BCAE49900070C1B /* Floor.m */; settings = {ASSET_TAGS = (); }; };
-		18BF02A71BCAE61B00070C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02A61BCAE61B00070C1B /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		18BF02AB1BCAEE6C00070C1B /* CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02AA1BCAEE6C00070C1B /* CustomColors.m */; settings = {ASSET_TAGS = (); }; };
+		18BF02921BCAD08A00070C1B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02911BCAD08A00070C1B /* MainViewController.m */; };
+		18BF02961BCAD0BD00070C1B /* Geomanist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02951BCAD0BD00070C1B /* Geomanist-Bold.otf */; };
+		18BF02A01BCAE09C00070C1B /* RoomStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF029E1BCAE09C00070C1B /* RoomStatusCell.m */; };
+		18BF02A11BCAE09C00070C1B /* RoomStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BF029F1BCAE09C00070C1B /* RoomStatusCell.xib */; };
+		18BF02A51BCAE49900070C1B /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02A41BCAE49900070C1B /* Floor.m */; };
+		18BF02A71BCAE61B00070C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02A61BCAE61B00070C1B /* Assets.xcassets */; };
+		18BF02AB1BCAEE6C00070C1B /* CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02AA1BCAEE6C00070C1B /* CustomColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		1814018F1BCB2179007853D4 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 		181401911BCB80D2007853D4 /* FloorStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorStatusViewController.h; sourceTree = "<group>"; };
 		181401921BCB80D2007853D4 /* FloorStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorStatusViewController.m; sourceTree = "<group>"; };
+		18362B841C1C0B8300023697 /* Desk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Desk.h; sourceTree = "<group>"; };
+		18362B851C1C0B8300023697 /* Desk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Desk.m; sourceTree = "<group>"; };
 		18BF025A1BCAD02600070C1B /* Deskka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deskka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF025E1BCAD02600070C1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18BF02601BCAD02600070C1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +77,9 @@
 		18BF02A61BCAE61B00070C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18BF02A91BCAEE6C00070C1B /* CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomColors.h; sourceTree = "<group>"; };
 		18BF02AA1BCAEE6C00070C1B /* CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomColors.m; sourceTree = "<group>"; };
+		5B3EE64D4075D24BBBB75D93 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		683F6E94B5CC042A25D34700 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6C3D1A08D6440EB5388DC10B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03EFFC157C5F34648334593A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +115,8 @@
 				18BF02761BCAD02600070C1B /* DeskkaTests */,
 				18BF02811BCAD02600070C1B /* DeskkaUITests */,
 				18BF025B1BCAD02600070C1B /* Products */,
+				D6FDE7B1D1A0E96C5CDF2F63 /* Pods */,
+				646BBC956FB5AC6137BB57F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,6 +213,8 @@
 				18BF02A41BCAE49900070C1B /* Floor.m */,
 				1814018E1BCB2179007853D4 /* Room.h */,
 				1814018F1BCB2179007853D4 /* Room.m */,
+				18362B841C1C0B8300023697 /* Desk.h */,
+				18362B851C1C0B8300023697 /* Desk.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -216,6 +228,23 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
+		646BBC956FB5AC6137BB57F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C3D1A08D6440EB5388DC10B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6FDE7B1D1A0E96C5CDF2F63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				683F6E94B5CC042A25D34700 /* Pods.debug.xcconfig */,
+				5B3EE64D4075D24BBBB75D93 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,9 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18BF02871BCAD02600070C1B /* Build configuration list for PBXNativeTarget "Deskka" */;
 			buildPhases = (
+				04B69B1A61AD9C8CFC563F64 /* Check Pods Manifest.lock */,
 				18BF02561BCAD02600070C1B /* Sources */,
 				18BF02571BCAD02600070C1B /* Frameworks */,
 				18BF02581BCAD02600070C1B /* Resources */,
+				EA617429AA0C69EB56EF9EF2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,6 +314,7 @@
 				TargetAttributes = {
 					18BF02591BCAD02600070C1B = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 6CX4VCTG9V;
 					};
 					18BF02721BCAD02600070C1B = {
 						CreatedOnToolsVersion = 7.0;
@@ -343,11 +375,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04B69B1A61AD9C8CFC563F64 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA617429AA0C69EB56EF9EF2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18BF02561BCAD02600070C1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18362B861C1C0B8300023697 /* Desk.m in Sources */,
 				18BF02AB1BCAEE6C00070C1B /* CustomColors.m in Sources */,
 				18BF02A01BCAE09C00070C1B /* RoomStatusCell.m in Sources */,
 				18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */,
@@ -493,8 +559,10 @@
 		};
 		18BF02881BCAD02600070C1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683F6E94B5CC042A25D34700 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Deskka/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -505,8 +573,10 @@
 		};
 		18BF02891BCAD02600070C1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B3EE64D4075D24BBBB75D93 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Deskka/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

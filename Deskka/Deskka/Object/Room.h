@@ -12,6 +12,7 @@
 
 @property int roomId;
 @property NSString *name;
+@property NSMutableArray *deskArray;
 @property int occupy;
 @property int max_amount;
 @property int type;
