@@ -221,24 +221,104 @@
     // assume we get the link data here
     
     //TODO: Check desk availability in network
-    
+    [self fetchDeskById:[deskId intValue]];
     
     // data is recieve and allow for usage
     // Recieve desk data
-    Desk* desk = [[Desk alloc] initWithDeskId:[deskId intValue] roomId:1 isAvailable:true];
-    if(desk.isAvailable){
-        //TODO: Post isAvailable to network
-        
-        [self toCheckInNoticeViewController:desk];
-    }else{
-        //TODO: Notified user that it is not available
-    }
+//    Desk* desk = [[Desk alloc] initWithDeskId:[deskId intValue] roomId:1 isAvailable:true];
+    
     
     
 }
 
-- (void) processRecievedRegistrationData{
+- (void) fetchDeskById:(int) deskId{
+    NSLog(@"Fetching Floor Id");
+    NSString *URLString = @"http://188.166.214.252/index.php/desks/";
+    URLString = [NSString stringWithFormat:@"%@%i",URLString,deskId];
+    NSDictionary *parameters = nil;
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
+    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    [manager setResponseSerializer:responseSerializer];
+    [manager GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id
+                                                           responseObject) {
+        //        NSLog(@"JSON: %@", responseObject);
+        NSError *e = nil;
+        //        NSLog(@"URL: %@",operation.request);
+        // Response object are recieve in JSONObject
+        
+        NSMutableArray *jsonArray = [NSMutableArray arrayWithArray:responseObject];
+        
+        NSMutableArray *addedArray = [[NSMutableArray alloc] init];
+        if (!jsonArray) {
+            NSLog(@"Error parsing JSON: %@", e);
+        } else {
+            for(NSDictionary* dict in jsonArray){
+                Desk *desk = [[Desk alloc] initWithDictionary:dict];
+                [addedArray addObject:desk];
+            }
+            NSLog(@"No of added item %lu",(unsigned long)addedArray.count);
+            
+        }        
+        [self processRecievedRegistrationData:(Desk *)addedArray[0]];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
+
+        
+    }];
+}
+
+//TODO: 
+
+- (void) updateDesk:(Desk *) fixedDesk{
+    NSLog(@"Fetching Floor Id");
+    NSString *URLString = @"http://188.166.214.252/index.php/desks/";
+    URLString = [NSString stringWithFormat:@"%@%i",URLString,fixedDesk.deskId];
+    NSDictionary *parameters = @{@"isAvailable":@(fixedDesk.isAvailable),@"user_id":@(1)};
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    [manager setResponseSerializer:responseSerializer];
+    [manager POST:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id
+                                                           responseObject) {
+        //        NSLog(@"JSON: %@", responseObject);
+        NSError *e = nil;
+        //        NSLog(@"URL: %@",operation.request);
+        // Response object are recieve in JSONObject
+        
+        NSMutableArray *jsonArray = [NSMutableArray arrayWithArray:responseObject];
+        
+        NSMutableArray *addedArray = [[NSMutableArray alloc] init];
+        if (!jsonArray) {
+            NSLog(@"Error parsing JSON: %@", e);
+        } else {
+            for(NSDictionary* dict in jsonArray){
+                Desk *desk = [[Desk alloc] initWithDictionary:dict];
+                [addedArray addObject:desk];
+            }
+            NSLog(@"No of added item %lu",(unsigned long)addedArray.count);
+            
+        }        
+        [self toCheckInNoticeViewController:fixedDesk];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
+        
+        
+    }];
+}
+
+
+- (void) processRecievedRegistrationData:(Desk *) desk{
+    if(desk.isAvailable){
+        //TODO: Post isAvailable to network
+        desk.isAvailable = false;
+        // This will post the data when complete it will auto render to another view controller
+        [self postRegisterDesk:desk];
+        
+    }else{
+        //TODO: Notified user that it is not available
+        [self toNoticeViewController:@"Desk's occupied"];
+    }
 }
 
 
@@ -269,6 +349,17 @@
 - (void) toMainViewController:(UIGestureRecognizer *)recognizer{
     [self.view endEditing:YES];
     [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void) toNoticeViewController:(NSString *) titleString {
+    NoticeViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"NoticeViewController"];
+    VC2.delegate = self;
+    VC2.extraCloseLayerAmount = 0;
+    VC2.titleString = titleString;
+    [self presentViewController:VC2 animated:YES completion:^{
+        //  [loadingView startAnimating];
+        NSLog(@"completion fired");
+    }];
 }
 
 /*

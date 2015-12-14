@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property NSString* titleString;
+@property int extraCloseLayerAmount;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (nonatomic, weak) id<NoticeViewControllerDelegate>delegate;
 @end

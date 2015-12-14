@@ -13,8 +13,8 @@
 @property int floorId;
 @property BOOL isAvailable;
 @property NSString* name;
-//@property int max_amount;
-//@property int current_available;
+@property int max_amount;
+@property int current_available;
 //@property NSMutableArray* roomArray;
 
 

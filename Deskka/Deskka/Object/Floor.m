@@ -31,11 +31,29 @@
     return self;
 }
 
+- (id) initWithId:(int)newId withName:(NSString *) newName maxAmount:(int) newMaxAmount currentAvailable:(int) newCurrentAvailableAmount isAvailable:(BOOL) isAvailable{
+    if(self =[super init]){
+        self.floorId = newId;
+        self.isAvailable = isAvailable;
+        self.name = newName;
+        self.current_available = newCurrentAvailableAmount;
+        self.max_amount = newMaxAmount;
+    }
+    return self;
+}
+
+
+
 -(id) initWithDictionary: (NSDictionary *) floorDict{
     if(self =[super init]){
         self.floorId = [floorDict[@"id"]intValue];
         self.isAvailable = [floorDict[@"isAvailable"] boolValue];
         self.name = floorDict[@"name"];
+        if([floorDict objectForKey:@"deskAvailability"]){
+            int availability = [floorDict[@"deskAvailability"][@"available"] intValue];
+            int unavailability = [floorDict[@"deskAvailability"][@"unavailable"] intValue];
+            
+        }
        
     }
     

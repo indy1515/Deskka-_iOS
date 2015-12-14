@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ScanViewController.h"
 #import "FloorStatusViewController.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @interface MainViewController : UIViewController <ScanViewControllerDelegate,FloorStatusViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

@@ -29,6 +29,11 @@
 
 #pragma mark - Setup
 
+- (void) setupLabel{
+    if(self.currentDesk != nil){
+        self.titleLabel.text = [NSString stringWithFormat:@"CHECK IN! %@",self.currentDesk.name];    }
+}
+
 - (void) setupButton{
     [self.okButton addTarget:self action:@selector(onClickOkButton:) forControlEvents:UIControlEventTouchUpInside];
 }

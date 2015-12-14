@@ -161,6 +161,7 @@
 - (void) toNoticeViewController:(NSString *) titleString {
     NoticeViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"NoticeViewController"];
     VC2.delegate = self;
+    VC2.extraCloseLayerAmount = 3;
     VC2.titleString = titleString;
     [self presentViewController:VC2 animated:YES completion:^{
         //  [loadingView startAnimating];

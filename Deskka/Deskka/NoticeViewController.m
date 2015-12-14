@@ -53,7 +53,12 @@
 
 - (void) toMainViewController:(UIGestureRecognizer *)recognizer{
     [self.view endEditing:YES];
-    [self.presentingViewController.presentingViewController.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    int i = 0;
+    UIViewController* presentViewCon = self.presentingViewController;
+    while(i < self.closeLayerAmount){
+        presentViewCon = presentViewCon.presentingViewController;
+    }
+    [presentViewCon dismissViewControllerAnimated:YES completion:nil];
 //    [self dismissViewControllerAnimated:NO completion:nil];
 }
 /*
