@@ -12,10 +12,14 @@
 @interface Desk : NSObject
 
 @property int deskId;
-@property int roomId;
+@property NSString* name;
+//@property int roomId;
+@property int userId;
 @property BOOL isAvailable;
+
 @property Room *room;
 
+-(id) initWithDictionary: (NSDictionary *) deskDict;
 
 -(id) initWithDeskId:(int) newDeskId roomId:(int) newRoomId;
 -(id) initWithDeskId:(int) newDeskId roomId:(int) newRoomId isAvailable:(BOOL) newIsAvailable;

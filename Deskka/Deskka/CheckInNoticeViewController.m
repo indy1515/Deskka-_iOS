@@ -37,7 +37,8 @@
 #pragma mark - onClick
 
 - (void) onClickOkButton:(UIGestureRecognizer *) regonizer{
-    [self toCheckInStatusViewController:self.currentDesk];  
+    [self toCheckInStatusViewController:self.currentDesk];
+    
 }
 
 

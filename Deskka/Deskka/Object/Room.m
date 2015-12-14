@@ -12,26 +12,39 @@
 
 -(id) init{
     if(self =[super init]){
+        self.roomId = -1;
+        self.isAvailable = false;
         self.name = @"NULL";
-        self.occupy = -1;
-        self.max_amount = -1;
-        self.type = -1;
+        self.typeId = -1;
     }
     
     return self;
 }
 
-- (id) initWithName:(NSString *) newName occupy:(int) newOccupy maxAmount:(int) newMaxAmount type:(int) newType{
+- (id) initWithName:(NSString *) newName type:(int) newType{
     if(self =[super init]){
+        self.roomId = -1;
+        self.isAvailable = false;
         self.name = newName;
-        self.occupy = newOccupy;
-        self.max_amount = newMaxAmount;
-        self.type = newType;
+        self.typeId = newType;
     }
     
     return self;
 }
 
+-(id) initWithDictionary: (NSDictionary *) roomDict{
+    if(self =[super init]){
+        if(roomDict[@"floor"]){
+            self.floor = [[Floor alloc] initWithDictionary:roomDict[@"floor"]];
+        }
+        self.roomId = [roomDict[@"id"]intValue];
+        self.isAvailable = [roomDict[@"isAvailable"] boolValue];
+        self.name = roomDict[@"name"];
+        self.typeId = [roomDict[@"roomType_id"]intValue];
 
+    }
+
+    return self;
+}
 
 @end

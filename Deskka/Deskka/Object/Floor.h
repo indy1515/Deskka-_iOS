@@ -11,13 +11,16 @@
 @interface Floor : NSObject
 
 @property int floorId;
+@property BOOL isAvailable;
 @property NSString* name;
-@property int max_amount;
-@property int current_available;
-@property NSMutableArray* roomArray;
+//@property int max_amount;
+//@property int current_available;
+//@property NSMutableArray* roomArray;
 
 
 - (id) initWithName:(NSString *) newName maxAmount:(int) newMaxAmount currentAvailable:(int) newCurrentAvailableAmount;
+
+-(id) initWithDictionary: (NSDictionary *) floorDict;
 
 /**
  * Show Availability of the floor

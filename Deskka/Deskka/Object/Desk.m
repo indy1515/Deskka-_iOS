@@ -13,9 +13,9 @@
 -(id) init{
     if(self =[super init]){
         self.deskId = -1;
-        self.roomId = -1;
+        self.name = @"";
+        self.userId = -1;
         self.isAvailable = false;
-        
     }
     
     return self;
@@ -24,9 +24,9 @@
 -(id) initWithDeskId:(int) newDeskId roomId:(int) newRoomId{
     if(self =[super init]){
         self.deskId = newDeskId;
-        self.roomId = newRoomId;
+        self.name = @"";
+        self.userId = -1;
         self.isAvailable = false;
-        
     }
     
     return self;
@@ -35,7 +35,8 @@
 -(id) initWithDeskId:(int) newDeskId roomId:(int) newRoomId isAvailable:(BOOL) newIsAvailable{
     if(self =[super init]){
         self.deskId = newDeskId;
-        self.roomId = newRoomId;
+        self.name = @"";
+        self.userId = -1;
         self.isAvailable = newIsAvailable;
         
     }
@@ -43,5 +44,20 @@
     return self;
 }
 
+
+-(id) initWithDictionary: (NSDictionary *) deskDict{
+    if(self =[super init]){
+        self.deskId = [deskDict[@"id"] intValue];
+        self.name = deskDict[@"name"];
+        if(deskDict[@"room"]){
+            self.room = [[Room alloc] initWithDictionary:deskDict[@"room"]];
+        }
+        self.userId = [deskDict[@"user_id"] intValue];
+        self.isAvailable = [deskDict[@"isAvailable"] boolValue];
+        
+    }
+    
+    return self;
+}
 
 @end

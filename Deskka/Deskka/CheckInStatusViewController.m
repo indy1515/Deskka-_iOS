@@ -16,6 +16,8 @@
 
 @implementation CheckInStatusViewController{
     NSMutableArray *currentTableData; // Room Status Array
+    int timeTick;
+    NSTimer *timer;
 }
 
 
@@ -23,6 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initializeData];
+    [self countDown];
     [self onClickSetup];
     [currentTableData addObject:[[Floor alloc]initWithName:@"6F" maxAmount:100 currentAvailable:85]];
     [currentTableData addObject:[[Floor alloc]initWithName:@"5F" maxAmount:100 currentAvailable:35]];
@@ -37,6 +40,10 @@
 
 - (void) initializeData{
     currentTableData = [[NSMutableArray alloc] init];
+    
+    timeTick = 20;
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
 }
 
 
@@ -52,12 +59,34 @@
     
     //TODO: Check out from network
     
-    [self toNoticeViewController:@"CHECK OUT"];
+    [self toNoticeViewController:@"CHECKED OUT"];
 }
 
 #pragma mark - Automation
 
 //TODO: Countdown Automation - when timeout post done to internet
+
+
+-(void)countDown{
+    //increment the timer
+    timeTick--;
+    
+    
+    int seconds = timeTick % 60;
+    int minutes = (timeTick / 60) % 60;
+    
+    //set a text label to display the time
+    NSString *timeString =[[NSString alloc] initWithFormat:@"%02d:%02d", minutes, seconds];
+    self.timeLabel.text = timeString;
+    
+    //if we want the timer to stop after a certain number of seconds we can do
+    if(timeTick <= 0){//stop the timer after 60 seconds
+        [timer invalidate];
+        [self toNoticeViewController:@"TIME'S UP!"];
+    }
+}
+
+
 
 #pragma mark - Table
 

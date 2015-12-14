@@ -32,6 +32,9 @@
     
 //    [self.tableView reloadData];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -110,6 +113,17 @@
     NSInteger rowNo = indexPath.row;
     [self toFloorStatusViewController:nil];
 }
+
+
+
+//- (void) fetchAllDesk{
+//    NSString *URLString = @"http://www.indyza.com/1/object/desks/";
+//    URLString = [NSString stringWithFormat:@"%@%i",URLString,num];
+//    NSDictionary *parameters = nil;
+//    
+//}
+
+
 
 - (void) toScanViewController:(UIGestureRecognizer *)recognizer {
     ScanViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ScanViewController"];

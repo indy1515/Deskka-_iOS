@@ -10,29 +10,38 @@
 
 @implementation Floor
 
-
 -(id) init{
     if(self =[super init]){
+        self.floorId = -1;
+        self.isAvailable = false;
         self.name = @"NULL";
-        self.current_available = -1;
-        self.max_amount = -1;
     }
     
     return self;
 }
 
-- (id) initWithName:(NSString *) newName maxAmount:(int) newMaxAmount currentAvailable:(int) newCurrentAvailableAmount{
+- (id) initWithName:(NSString *) newName{
     if(self =[super init]){
+        
+        self.floorId = -1;
+        self.isAvailable = false;
         self.name = newName;
-        self.current_available = newCurrentAvailableAmount;
-        self.max_amount = newMaxAmount;
+    }
+    
+    return self;
+}
+
+-(id) initWithDictionary: (NSDictionary *) floorDict{
+    if(self =[super init]){
+        self.floorId = [floorDict[@"id"]intValue];
+        self.isAvailable = [floorDict[@"isAvailable"] boolValue];
+        self.name = floorDict[@"name"];
+       
     }
     
     return self;
 }
 
 
-- (float) getAvailablePercent{
-    return ((float)self.current_available/self.max_amount)*100;
-}
+
 @end
