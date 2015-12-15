@@ -27,10 +27,11 @@
     [self initializeData];
     [self countDown];
     [self onClickSetup];
-    [currentTableData addObject:[[Floor alloc]initWithName:@"6F" maxAmount:100 currentAvailable:85]];
-    [currentTableData addObject:[[Floor alloc]initWithName:@"5F" maxAmount:100 currentAvailable:35]];
-    [currentTableData addObject:[[Floor alloc]initWithName:@"4F" maxAmount:100 currentAvailable:17]];
-    [currentTableData addObject:[[Floor alloc]initWithName:@"3F" maxAmount:100 currentAvailable:6]];
+    [self fetchFloorList];
+//    [currentTableData addObject:[[Floor alloc]initWithName:@"6F" maxAmount:100 currentAvailable:85]];
+//    [currentTableData addObject:[[Floor alloc]initWithName:@"5F" maxAmount:100 currentAvailable:35]];
+//    [currentTableData addObject:[[Floor alloc]initWithName:@"4F" maxAmount:100 currentAvailable:17]];
+//    [currentTableData addObject:[[Floor alloc]initWithName:@"3F" maxAmount:100 currentAvailable:6]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,7 +88,7 @@
 }
 
 - (void) countDownEnd{
-    self.currentDesk.isAvailable = false;
+    self.currentDesk.isAvailable = true;
     [self updateDesk:self.currentDesk];
     
 }
@@ -162,7 +163,7 @@
 #pragma mark - Internet
 
 - (void) updateDesk:(Desk *) fixedDesk{
-    NSLog(@"Fetching Floor Id");
+    NSLog(@"Update Desk");
     NSString *URLString = @"http://188.166.214.252/index.php/desks/";
     URLString = [NSString stringWithFormat:@"%@%i",URLString,fixedDesk.deskId];
     NSDictionary *parameters = @{@"isAvailable":@(fixedDesk.isAvailable),@"user_id":@(1)};
@@ -171,7 +172,50 @@
     AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
     [manager setResponseSerializer:responseSerializer];
     [manager POST:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id
-                                                            responseObject) {
+                                                           responseObject) {
+        //        NSLog(@"JSON: %@", responseObject);
+        NSError *e = nil;
+        //        NSLog(@"URL: %@",operation.request);
+        // Response object are recieve in JSONObject
+        NSDictionary *jsonObj = [NSDictionary dictionaryWithDictionary:responseObject];
+        
+        
+        if (!jsonObj) {
+            NSLog(@"Error parsing JSON: %@", e);
+        } else {
+            
+            
+            if([jsonObj objectForKey:@"status"]){
+                // Success
+                NSString* status = jsonObj[@"status"];
+                NSLog(@"Status: %@",status);
+                [self toNoticeViewController:@"TIME'S UP! CHECK OUT!"];
+            }else if([jsonObj objectForKey:@"error"]){
+                // Error
+                [self toNoticeViewController:@"Desk's Error"];
+                
+            }
+        }
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
+        
+        
+    }];
+}
+
+- (void) fetchFloorList{
+    NSLog(@"Fetching Floor List");
+    NSString *URLString = @"http://188.166.214.252/index.php/floors";
+    NSDictionary *parameters = nil;
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    [manager setResponseSerializer:responseSerializer];
+    [manager GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id
+                                                           responseObject) {
         //        NSLog(@"JSON: %@", responseObject);
         NSError *e = nil;
         //        NSLog(@"URL: %@",operation.request);
@@ -184,19 +228,71 @@
             NSLog(@"Error parsing JSON: %@", e);
         } else {
             for(NSDictionary* dict in jsonArray){
-                Desk *desk = [[Desk alloc] initWithDictionary:dict];
-                [addedArray addObject:desk];
+                Floor *floor = [[Floor alloc] initWithDictionary:dict];
+                [addedArray addObject:floor];
             }
             NSLog(@"No of added item %lu",(unsigned long)addedArray.count);
             
-        }        
-        [self toNoticeViewController:@"TIME'S UP!"];
+        }
+        [self forwardFloorList:addedArray];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
-        
+        if([currentTableData count] == 0){
+            [self fetchFloorList];
+        }else{
+            
+        }
         
     }];
+    
 }
+
+- (void) forwardFloorList:(NSMutableArray *) floorList{
+    for(Floor *fl in floorList){
+        [self fetchFloorId:fl.floorId];
+    }
+}
+
+- (void) fetchFloorId:(int) floorId{
+    NSLog(@"Fetching Floor Id");
+    NSString *URLString = @"http://188.166.214.252/index.php/floors/";
+    URLString = [NSString stringWithFormat:@"%@%i",URLString,floorId];
+    NSDictionary *parameters = @{@"option":@"getFloorStat"};
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    [manager setResponseSerializer:responseSerializer];
+    [manager GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id
+                                                           responseObject) {
+        //        NSLog(@"JSON: %@", responseObject);
+        NSError *e = nil;
+        //        NSLog(@"URL: %@",operation.request);
+        // Response object are recieve in JSONObject
+        
+        NSDictionary *jsonObj = [NSDictionary dictionaryWithDictionary:responseObject];
+        
+        
+        if (!jsonObj) {
+            NSLog(@"Error parsing JSON: %@", e);
+        } else {
+            Floor *floor = [[Floor alloc] initWithDictionary:jsonObj];
+            [currentTableData addObject:floor];
+        }
+        [self.tableView reloadData];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
+        if([currentTableData count] == 0){
+            [self fetchFloorId:floorId];
+        }else{
+        }
+        
+    }];
+    
+}
+
 
 
 #pragma mark - Navigation

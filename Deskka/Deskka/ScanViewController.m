@@ -29,6 +29,7 @@
     }
     [self startScanning];
     
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated;
@@ -37,6 +38,7 @@
     if(![self isCameraAvailable]) {
         [self setupNoCameraView];
     }
+    [self.session startRunning];
 }
 
 - (void) viewDidAppear:(BOOL)animated;
@@ -282,21 +284,29 @@
         NSError *e = nil;
         //        NSLog(@"URL: %@",operation.request);
         // Response object are recieve in JSONObject
+        NSDictionary *jsonObj = [NSDictionary dictionaryWithDictionary:responseObject];
         
-        NSMutableArray *jsonArray = [NSMutableArray arrayWithArray:responseObject];
         
-        NSMutableArray *addedArray = [[NSMutableArray alloc] init];
-        if (!jsonArray) {
+        if (!jsonObj) {
             NSLog(@"Error parsing JSON: %@", e);
         } else {
-            for(NSDictionary* dict in jsonArray){
-                Desk *desk = [[Desk alloc] initWithDictionary:dict];
-                [addedArray addObject:desk];
-            }
-            NSLog(@"No of added item %lu",(unsigned long)addedArray.count);
             
-        }        
-        [self toCheckInNoticeViewController:fixedDesk];
+            
+            if([jsonObj objectForKey:@"status"]){
+                // Success
+                NSString* status = jsonObj[@"status"];
+                NSLog(@"Status: %@",status);
+                [self toCheckInNoticeViewController:fixedDesk];
+            }else if([jsonObj objectForKey:@"error"]){
+                // Error
+                [self toNoticeViewController:@"Desk's Error"];
+                
+            }
+            
+        }
+        
+        
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
         
