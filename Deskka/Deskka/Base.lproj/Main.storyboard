@@ -53,7 +53,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -93,14 +93,33 @@
                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="24"/>
                                                 <color key="textColor" red="0.1803921568627451" green="0.19215686274509802" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="117" y="79" width="166" height="28"/>
-                                                </variation>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgX-ow-OEk">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="EGl-ah-X6G"/>
+                                                    <constraint firstAttribute="width" constant="40" id="gcK-ey-183"/>
+                                                </constraints>
+                                                <state key="normal" image="logout"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="EGl-ah-X6G"/>
+                                                        <exclude reference="gcK-ey-183"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="EGl-ah-X6G"/>
+                                                        <include reference="gcK-ey-183"/>
+                                                    </mask>
+                                                </variation>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="BG2-je-sNZ" firstAttribute="centerX" secondItem="kbM-V3-Cvd" secondAttribute="centerX" id="6KY-2N-O89"/>
+                                            <constraint firstAttribute="trailing" secondItem="rgX-ow-OEk" secondAttribute="trailing" constant="15" id="Rg9-E6-xIa"/>
+                                            <constraint firstItem="rgX-ow-OEk" firstAttribute="top" secondItem="kbM-V3-Cvd" secondAttribute="top" constant="15" id="Z28-uM-b9Z"/>
                                             <constraint firstItem="U1y-ek-k16" firstAttribute="top" secondItem="kbM-V3-Cvd" secondAttribute="top" constant="31" id="cac-WN-t2N">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="27"/>
                                             </constraint>
@@ -113,24 +132,30 @@
                                             <mask key="subviews">
                                                 <exclude reference="U1y-ek-k16"/>
                                                 <exclude reference="BG2-je-sNZ"/>
+                                                <exclude reference="rgX-ow-OEk"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="cac-WN-t2N"/>
-                                                <exclude reference="l3B-Zp-h4D"/>
                                                 <exclude reference="6KY-2N-O89"/>
                                                 <exclude reference="zWE-od-Jyd"/>
+                                                <exclude reference="cac-WN-t2N"/>
+                                                <exclude reference="l3B-Zp-h4D"/>
+                                                <exclude reference="Rg9-E6-xIa"/>
+                                                <exclude reference="Z28-uM-b9Z"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="subviews">
                                                 <include reference="U1y-ek-k16"/>
                                                 <include reference="BG2-je-sNZ"/>
+                                                <include reference="rgX-ow-OEk"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="cac-WN-t2N"/>
-                                                <include reference="l3B-Zp-h4D"/>
                                                 <include reference="6KY-2N-O89"/>
                                                 <include reference="zWE-od-Jyd"/>
+                                                <include reference="cac-WN-t2N"/>
+                                                <include reference="l3B-Zp-h4D"/>
+                                                <include reference="Rg9-E6-xIa"/>
+                                                <include reference="Z28-uM-b9Z"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -231,18 +256,12 @@
                                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="15"/>
                                                                 <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
-                                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                    <rect key="frame" x="0.0" y="6" width="30" height="17.5"/>
-                                                                </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="available" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb3-Vs-Bfo">
                                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="15"/>
                                                                 <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
-                                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                    <rect key="frame" x="281" y="6" width="59" height="17.5"/>
-                                                                </variation>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
@@ -552,6 +571,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="logoutButton" destination="rgX-ow-OEk" id="uDw-wK-HzP"/>
                         <outlet property="scanButton" destination="l0i-rI-ibw" id="hqd-p9-Shm"/>
                         <outlet property="tableView" destination="CwC-aB-XAu" id="ybP-sL-r3g"/>
                     </connections>
@@ -699,7 +719,23 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBy-Vw-eS9">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="QdZ-j5-WnO"/>
+                                            <constraint firstAttribute="height" constant="40" id="X5o-f4-NgM"/>
+                                        </constraints>
                                         <state key="normal" image="go"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="QdZ-j5-WnO"/>
+                                                <exclude reference="X5o-f4-NgM"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="QdZ-j5-WnO"/>
+                                                <include reference="X5o-f4-NgM"/>
+                                            </mask>
+                                        </variation>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3021,6 +3057,7 @@
         <image name="line" width="240" height="1"/>
         <image name="logo" width="116" height="36"/>
         <image name="logo_big" width="225" height="71"/>
+        <image name="logout" width="25" height="25"/>
         <image name="tri_blue" width="25" height="12"/>
         <image name="tri_white" width="25" height="13"/>
     </resources>

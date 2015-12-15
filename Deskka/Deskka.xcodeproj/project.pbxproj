@@ -16,6 +16,8 @@
 		18362B8C1C1C17B500023697 /* CheckInStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18362B8B1C1C17B500023697 /* CheckInStatusViewController.m */; };
 		18362B8F1C1C3E1B00023697 /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18362B8E1C1C3E1B00023697 /* NoticeViewController.m */; };
 		18462B881C2080BC000918AE /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18462B871C2080BC000918AE /* ColorHelper.m */; };
+		18462B8B1C2097F4000918AE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 18462B8A1C2097F4000918AE /* User.m */; };
+		18462B8D1C209F2F000918AE /* userList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18462B8C1C209F2F000918AE /* userList.plist */; };
 		18BF025F1BCAD02600070C1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF025E1BCAD02600070C1B /* main.m */; };
 		18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02611BCAD02600070C1B /* AppDelegate.m */; };
 		18BF02681BCAD02600070C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02661BCAD02600070C1B /* Main.storyboard */; };
@@ -67,6 +69,9 @@
 		18362B8E1C1C3E1B00023697 /* NoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
 		18462B861C2080BC000918AE /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorHelper.h; path = ColorHelper/ColorHelper.h; sourceTree = "<group>"; };
 		18462B871C2080BC000918AE /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorHelper.m; path = ColorHelper/ColorHelper.m; sourceTree = "<group>"; };
+		18462B891C2097F4000918AE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		18462B8A1C2097F4000918AE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		18462B8C1C209F2F000918AE /* userList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userList.plist; sourceTree = "<group>"; };
 		18BF025A1BCAD02600070C1B /* Deskka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deskka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF025E1BCAD02600070C1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18BF02601BCAD02600070C1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -192,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				18BF025E1BCAD02600070C1B /* main.m */,
+				18462B8C1C209F2F000918AE /* userList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -251,6 +257,8 @@
 				1814018F1BCB2179007853D4 /* Room.m */,
 				18362B841C1C0B8300023697 /* Desk.h */,
 				18362B851C1C0B8300023697 /* Desk.m */,
+				18462B891C2097F4000918AE /* User.h */,
+				18462B8A1C2097F4000918AE /* User.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -393,6 +401,7 @@
 				18BF02681BCAD02600070C1B /* Main.storyboard in Resources */,
 				18BF02A11BCAE09C00070C1B /* RoomStatusCell.xib in Resources */,
 				18BF02A71BCAE61B00070C1B /* Assets.xcassets in Resources */,
+				18462B8D1C209F2F000918AE /* userList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18462B8B1C2097F4000918AE /* User.m in Sources */,
 				18362B861C1C0B8300023697 /* Desk.m in Sources */,
 				18BF02AB1BCAEE6C00070C1B /* CustomColors.m in Sources */,
 				18362B891C1C108100023697 /* CheckInNoticeViewController.m in Sources */,

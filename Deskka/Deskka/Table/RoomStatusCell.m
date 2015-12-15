@@ -32,15 +32,16 @@
 }
 
 - (void) startAnimation{
-    self.availableLabel.text = @"0%%";
+    
     self.availableLabel.format = @"%d%%";
     self.availableLabel.method = UILabelCountingMethodEaseOut;
-    [self.availableLabel countFrom:0 to:(int)self.availablePercentage withDuration:1.0f];
+    [self.availableLabel countFrom:[self.availableLabel currentValue] to:(int)self.availablePercentage withDuration:1.0f];
 //    self.availableLabel.text = [NSString stringWithFormat:@"%i%%",(int)self.availablePercentage];
     
 }
 
 - (void) setPercentageLabel:(float) value{
+    self.availableLabel.text = @"0%%";
     self.availablePercentage = value;
     [self setBackgroundWithPercentage:value];
 }

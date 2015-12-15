@@ -23,20 +23,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self checkIfNeedLogin];
+    [self fetchFloorList];
     [self initializeVariable];
     [self setupButton];
+    
     //TODO: Fetch all floor data and room for calculation
-    [self fetchFloorList];
-//    [currentTableData addObject:[[Floor alloc]initWithName:@"6F" maxAmount:100 currentAvailable:85]];
-//    [currentTableData addObject:[[Floor alloc]initWithName:@"5F" maxAmount:100 currentAvailable:35]];
-//    [currentTableData addObject:[[Floor alloc]initWithName:@"4F" maxAmount:100 currentAvailable:17]];
-//    [currentTableData addObject:[[Floor alloc]initWithName:@"3F" maxAmount:100 currentAvailable:6]];
-    
-    
-//    [self.tableView reloadData];
     // Do any additional setup after loading the view, typically from a nib.
     
     
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [self.logoutButton setEnabled:TRUE];
     
 }
 
@@ -52,7 +53,18 @@
 
 - (void) setupButton{
     [self.scanButton addTarget:self action:@selector(toScanViewController:) forControlEvents:UIControlEventTouchUpInside];
+    [self.logoutButton addTarget:self action:@selector(onClickLogout:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+#pragma mark - onClick
+
+- (void) onClickLogout:(UIGestureRecognizer *) recognizer{
+    [self saveUser:[[NSMutableArray alloc] init]];
+    [self.logoutButton setEnabled:FALSE];
+    [self toLoginViewController:recognizer];
+}
+
+#pragma mark - Table
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -125,6 +137,7 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
 
 
 - (void) fetchFloorList{
+    
     NSLog(@"Fetching Floor List");
     NSString *URLString = @"http://188.166.214.252/index.php/floors";
     NSDictionary *parameters = nil;
@@ -197,7 +210,14 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
             NSLog(@"Error parsing JSON: %@", e);
         } else {
             Floor *floor = [[Floor alloc] initWithDictionary:jsonObj];
-            [currentTableData addObject:floor];
+            bool foundDuplicate = false;
+            for(Floor* fl in currentTableData){
+                if(fl.floorId == floor.floorId){
+                    foundDuplicate = true;
+                    break;
+                }
+            }
+            if(!foundDuplicate) [currentTableData addObject:floor];
         }
         
         //Sorting
@@ -240,7 +260,14 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
 
 #pragma mark - Navigation
 
-
+- (void) toLoginViewController:(UIGestureRecognizer *)recognizer {
+    LoginViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    VC2.delegate = self;
+    [self presentViewController:VC2 animated:NO completion:^{
+        //  [loadingView startAnimating];
+        NSLog(@"completion fired");
+    }];
+}
 
 - (void) toScanViewController:(UIGestureRecognizer *)recognizer {
     ScanViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ScanViewController"];
@@ -260,6 +287,67 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
         NSLog(@"completion fired");
     }];
 }
+
+#pragma mark - USER
+
+- (void) checkIfNeedLogin{
+    NSMutableArray *userList = [self loadUser];
+   
+    if([userList count] == 0){
+        [self toLoginViewController:nil];
+    }else{
+         NSLog(@"User Amount: %i",[userList count]);
+    }
+}
+
+#pragma mark - save/load
+
+- (NSMutableArray *) loadUser{
+    // Format is Array of Dictionary with key = @"stationName",@"stationId"
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"userList.plist"];
+    NSMutableArray *userDictList = [[[NSMutableArray alloc]initWithContentsOfFile:plistPath]mutableCopy];
+    if([userDictList isEqual: nil]) return nil;
+    if([userDictList count] == 0) return nil;
+    NSMutableArray *userList = [[NSMutableArray alloc] init];
+    for(NSDictionary* userDict in userDictList){
+        User* user = [[User alloc] initWithDictionary:userDict];
+        [userList insertObject:user atIndex:0];
+        return userList;
+    }
+    
+    return userList;
+}
+
+- (void) saveUser:(NSMutableArray *) userList {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"userList.plist"];
+    NSMutableArray* recentList = [[NSMutableArray alloc] init];
+    if(!([userList count] == 0)){
+        for(User * user in userList){
+            NSDictionary* newData = @{
+                                      @"id":[NSString stringWithFormat:@"%i",user.userId],
+                                      @"chulaID":user.chulaId,
+                                      @"password": user.password,
+                                      @"name": user.firstname,
+                                      @"lastName": user.lastname,
+                                      @"faculty": user.faculty,
+                                      @"major": user.major,
+                                      @"year": user.year
+                                      };
+            [recentList insertObject:newData atIndex:0];
+        }
+    }
+    [recentList writeToFile:filePath atomically:YES];
+    NSLog(@"User Save");
+}
+
+
+
+
 
 
 @end
