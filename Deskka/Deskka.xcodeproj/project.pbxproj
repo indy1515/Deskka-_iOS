@@ -28,6 +28,8 @@
 		18BF02A51BCAE49900070C1B /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02A41BCAE49900070C1B /* Floor.m */; };
 		18BF02A71BCAE61B00070C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02A61BCAE61B00070C1B /* Assets.xcassets */; };
 		18BF02AB1BCAEE6C00070C1B /* CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02AA1BCAEE6C00070C1B /* CustomColors.m */; };
+		246D857B1C200FE300E45266 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246D857A1C200FE300E45266 /* LoginViewController.m */; };
+		246D857D1C2015F100E45266 /* Geomanist-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 246D857C1C2015F100E45266 /* Geomanist-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +88,9 @@
 		18BF02A61BCAE61B00070C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18BF02A91BCAEE6C00070C1B /* CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomColors.h; sourceTree = "<group>"; };
 		18BF02AA1BCAEE6C00070C1B /* CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomColors.m; sourceTree = "<group>"; };
-		246D85721C20042700E45266 /* Geomanist-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomanist-Light.otf"; sourceTree = "<group>"; };
+		246D85791C200FE300E45266 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		246D857A1C200FE300E45266 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		246D857C1C2015F100E45266 /* Geomanist-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomanist-Light.otf"; sourceTree = "<group>"; };
 		5B3EE64D4075D24BBBB75D93 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		683F6E94B5CC042A25D34700 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6C3D1A08D6440EB5388DC10B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +152,8 @@
 				18BF02931BCAD0BD00070C1B /* Resource */,
 				18BF02601BCAD02600070C1B /* AppDelegate.h */,
 				18BF02611BCAD02600070C1B /* AppDelegate.m */,
+				246D85791C200FE300E45266 /* LoginViewController.h */,
+				246D857A1C200FE300E45266 /* LoginViewController.m */,
 				18BF02901BCAD08A00070C1B /* MainViewController.h */,
 				18BF02911BCAD08A00070C1B /* MainViewController.m */,
 				1814018B1BCB066E007853D4 /* ScanViewController.h */,
@@ -207,7 +213,7 @@
 		18BF02941BCAD0BD00070C1B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				246D85721C20042700E45266 /* Geomanist-Light.otf */,
+				246D857C1C2015F100E45266 /* Geomanist-Light.otf */,
 				18BF02951BCAD0BD00070C1B /* Geomanist-Bold.otf */,
 			);
 			path = Fonts;
@@ -370,6 +376,7 @@
 			files = (
 				18BF026D1BCAD02600070C1B /* LaunchScreen.storyboard in Resources */,
 				18BF02961BCAD0BD00070C1B /* Geomanist-Bold.otf in Resources */,
+				246D857D1C2015F100E45266 /* Geomanist-Light.otf in Resources */,
 				18BF02681BCAD02600070C1B /* Main.storyboard in Resources */,
 				18BF02A11BCAE09C00070C1B /* RoomStatusCell.xib in Resources */,
 				18BF02A71BCAE61B00070C1B /* Assets.xcassets in Resources */,
@@ -434,6 +441,7 @@
 				18BF02AB1BCAEE6C00070C1B /* CustomColors.m in Sources */,
 				18362B891C1C108100023697 /* CheckInNoticeViewController.m in Sources */,
 				18BF02A01BCAE09C00070C1B /* RoomStatusCell.m in Sources */,
+				246D857B1C200FE300E45266 /* LoginViewController.m in Sources */,
 				18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */,
 				18362B8F1C1C3E1B00023697 /* NoticeViewController.m in Sources */,
 				18BF025F1BCAD02600070C1B /* main.m in Sources */,
