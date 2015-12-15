@@ -27,6 +27,17 @@
     
 }
 
+- (void) startAnimation{
+    self.availableLabel.text = [NSString stringWithFormat:@"%i%%",(int)self.availablePercentage];
+    
+}
+
+- (void) setPercentageLabel:(float) value{
+    
+    self.availablePercentage = value;
+    [self setBackgroundWithPercentage:value];
+}
+
 - (void) setBackgroundWithPercentage:(float) value{
     UIColor *bgColor = [UIColor blueCustom];
     if(value >= 51){

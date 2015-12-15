@@ -234,7 +234,7 @@
 }
 
 - (void) fetchDeskById:(int) deskId{
-    NSLog(@"Fetching Floor Id");
+    NSLog(@"Fetching Desk by Id");
     NSString *URLString = @"http://188.166.214.252/index.php/desks/";
     URLString = [NSString stringWithFormat:@"%@%i",URLString,deskId];
     NSDictionary *parameters = nil;

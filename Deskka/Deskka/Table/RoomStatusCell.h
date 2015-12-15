@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *availableLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
+@property float availablePercentage;
 
 - (void) setBackgroundWithPercentage:(float) value;
+- (void) setPercentageLabel:(float) value;
 @end

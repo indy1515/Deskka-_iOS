@@ -17,6 +17,8 @@
 
 @implementation MainViewController{
     NSMutableArray *currentTableData; // Room Status Array
+    NSMutableArray *queueMutableArray;
+    
 }
 
 - (void)viewDidLoad {
@@ -78,27 +80,11 @@
 //    //    tableView.separatorColor = [UIColor whiteColor];
     Floor *cellValue = [currentTableData objectAtIndex:indexPath.row];
     cell.nameLabel.text = cellValue.name;
-    cell.availableLabel.text = [NSString stringWithFormat:@"%i%%",(int)[cellValue getAvailablePercent]];
-    [cell setBackgroundWithPercentage:(int)[cellValue getAvailablePercent]];
-    
+    [cell setPercentageLabel:(int)[cellValue getAvailablePercent]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
 
-//    if(cellValue.isShown){
-//        [cell.viewButton setImage:[UIImage imageNamed:@"main_show"] forState:UIControlStateNormal];
-//        
-//    }else{
-//        [cell.viewButton setImage:[UIImage imageNamed:@"main_hide"] forState:UIControlStateNormal];
-//    }
-//    cell.busNoLabel.text = cellValue.nameTH;
-//    cell.stationALabel.text = [cellValue getStationA];
-//    cell.stationBLabel.text = [cellValue getStationB];
-//    cell.delegate = self;
-//    cell.cellIndex = indexPath.row;
-//    //    directionType;
-//    //    stationALabel;
-//    //    stationBLabel;
-//    //    viewButton;
-//    
+
     if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [tableView setSeparatorInset:UIEdgeInsetsZero];
         if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
@@ -109,11 +95,37 @@
     return cell;
 }
 
+- (void)insertRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
+{
+    for (NSIndexPath *indexPath in indexPaths)
+    {
+        RoomStatusCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [cell startAnimation];
+    }
+}
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger rowNo = indexPath.row;
     [self toFloorStatusViewController:nil];
 }
+
+
+#pragma mark - Functional
+
+
+
+NSInteger sort(Floor* a, Floor* b, void*p) {
+    return [[a name] compare:[b name] options:NSNumericSearch];
+}
+
+
+
+
+
+
+
 #pragma mark - Fetching
 
 
@@ -147,6 +159,7 @@
         }
         [self forwardFloorList:addedArray];
         
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
         if([currentTableData count] == 0){
@@ -160,6 +173,7 @@
 }
 
 - (void) forwardFloorList:(NSMutableArray *) floorList{
+    queueMutableArray = floorList;
     for(Floor *fl in floorList){
         [self fetchFloorId:fl.floorId];
     }
@@ -190,8 +204,14 @@
             Floor *floor = [[Floor alloc] initWithDictionary:jsonObj];
             [currentTableData addObject:floor];
         }
-        [self.tableView reloadData];
         
+        //Sorting
+        NSArray* tempArray = [[currentTableData copy] sortedArrayUsingFunction:&sort context:nil];
+        tempArray = [[tempArray reverseObjectEnumerator] allObjects];
+        currentTableData = [NSMutableArray arrayWithArray:tempArray];
+        if([currentTableData count] == [queueMutableArray count]){
+            [self reloadData:YES];
+        }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
@@ -202,6 +222,23 @@
         
     }];
 
+}
+
+- (void)reloadData:(BOOL)animated
+{
+    [self.tableView reloadData];
+    
+    if (animated) {
+        
+        CATransition *animation = [CATransition animation];
+        [animation setType:kCATransitionFade];
+//        [animation setSubtype:kCATransitionFade];
+        [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+        [animation setFillMode:kCAFillModeBoth];
+        [animation setDuration:.3];
+        [[self.tableView layer] addAnimation:animation forKey:@"UITableViewReloadDataAnimationKey"];
+        
+    }
 }
 
 

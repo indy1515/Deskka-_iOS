@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Floor.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @class FloorStatusViewController;
 
@@ -17,6 +19,14 @@
 @end
 @interface FloorStatusViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel; 
+@property (weak, nonatomic) IBOutlet UILabel *statLabel; // (0/0)
+@property (weak, nonatomic) IBOutlet UILabel *percentLabel; // (%)
+
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel2;
+
+@property Floor* currentFloor;
 
 @property (nonatomic, weak) id<FloorStatusViewControllerDelegate>delegate;
 @end
