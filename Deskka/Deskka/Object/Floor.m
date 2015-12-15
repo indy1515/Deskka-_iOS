@@ -52,6 +52,8 @@
         if([floorDict objectForKey:@"deskAvailability"]){
             int availability = [floorDict[@"deskAvailability"][@"available"] intValue];
             int unavailability = [floorDict[@"deskAvailability"][@"unavailable"] intValue];
+            self.current_available = availability;
+            self.max_amount = availability+unavailability;
             
         }
        
@@ -60,6 +62,9 @@
     return self;
 }
 
+- (float) getAvailablePercent{
+    return ((float)self.current_available/self.max_amount)*100;
+}
 
 
 @end

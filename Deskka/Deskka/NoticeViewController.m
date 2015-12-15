@@ -55,8 +55,9 @@
     [self.view endEditing:YES];
     int i = 0;
     UIViewController* presentViewCon = self.presentingViewController;
-    while(i < self.closeLayerAmount){
+    while(i < self.extraCloseLayerAmount){
         presentViewCon = presentViewCon.presentingViewController;
+        i++;
     }
     [presentViewCon dismissViewControllerAnimated:YES completion:nil];
 //    [self dismissViewControllerAnimated:NO completion:nil];

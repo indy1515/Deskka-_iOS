@@ -190,6 +190,7 @@
             Floor *floor = [[Floor alloc] initWithDictionary:jsonObj];
             [currentTableData addObject:floor];
         }
+        [self.tableView reloadData];
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

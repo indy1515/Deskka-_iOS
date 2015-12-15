@@ -52,7 +52,9 @@
         if(deskDict[@"room"]){
             self.room = [[Room alloc] initWithDictionary:deskDict[@"room"]];
         }
-        self.userId = [deskDict[@"user_id"] intValue];
+        if(![deskDict[@"user_id"] isEqual:[NSNull null]]){
+            self.userId = [deskDict[@"user_id"] intValue];
+        }
         self.isAvailable = [deskDict[@"isAvailable"] boolValue];
         
     }

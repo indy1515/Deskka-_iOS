@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Room.h"
+
 @interface Floor : NSObject
 
 @property int floorId;

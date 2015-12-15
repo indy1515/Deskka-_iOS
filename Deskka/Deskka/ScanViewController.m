@@ -247,20 +247,17 @@
         //        NSLog(@"URL: %@",operation.request);
         // Response object are recieve in JSONObject
         
-        NSMutableArray *jsonArray = [NSMutableArray arrayWithArray:responseObject];
+        NSDictionary *jsonObj = [NSDictionary dictionaryWithDictionary:responseObject];
         
-        NSMutableArray *addedArray = [[NSMutableArray alloc] init];
-        if (!jsonArray) {
+        
+        if (!jsonObj) {
             NSLog(@"Error parsing JSON: %@", e);
         } else {
-            for(NSDictionary* dict in jsonArray){
-                Desk *desk = [[Desk alloc] initWithDictionary:dict];
-                [addedArray addObject:desk];
-            }
-            NSLog(@"No of added item %lu",(unsigned long)addedArray.count);
-            
-        }        
-        [self processRecievedRegistrationData:(Desk *)addedArray[0]];
+            Desk *desk = [[Desk alloc] initWithDictionary:jsonObj];
+            [self processRecievedRegistrationData:desk];
+        }
+
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
 
@@ -271,7 +268,7 @@
 //TODO: 
 
 - (void) updateDesk:(Desk *) fixedDesk{
-    NSLog(@"Fetching Floor Id");
+    NSLog(@"Update Desk");
     NSString *URLString = @"http://188.166.214.252/index.php/desks/";
     URLString = [NSString stringWithFormat:@"%@%i",URLString,fixedDesk.deskId];
     NSDictionary *parameters = @{@"isAvailable":@(fixedDesk.isAvailable),@"user_id":@(1)};
@@ -313,7 +310,7 @@
         //TODO: Post isAvailable to network
         desk.isAvailable = false;
         // This will post the data when complete it will auto render to another view controller
-        [self postRegisterDesk:desk];
+        [self updateDesk :desk];
         
     }else{
         //TODO: Notified user that it is not available

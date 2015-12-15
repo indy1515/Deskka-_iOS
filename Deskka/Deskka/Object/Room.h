@@ -15,13 +15,13 @@
 @property BOOL isAvailable;
 @property NSString *name;
 @property int typeId;
-
+@property Floor *floor;
 //@property NSMutableArray *deskArray;
 //@property int occupy;
 //@property int max_amount;
 //@property int type;
 
-@property Floor *floor;
+
 
 -(id) initWithDictionary: (NSDictionary *) roomDict;
 

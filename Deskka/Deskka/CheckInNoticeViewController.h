@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CheckInStatusViewController.h"
+#import "AFHTTPRequestOperationManager.h"
 #import "Desk.h"
 
 

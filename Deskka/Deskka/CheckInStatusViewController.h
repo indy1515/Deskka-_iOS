@@ -12,6 +12,7 @@
 #import "RoomStatusCell.h"
 #import "CustomColors.h"
 #import "NoticeViewController.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @class CheckInStatusViewController;
 

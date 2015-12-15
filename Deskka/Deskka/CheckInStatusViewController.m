@@ -82,10 +82,15 @@
     //if we want the timer to stop after a certain number of seconds we can do
     if(timeTick <= 0){//stop the timer after 60 seconds
         [timer invalidate];
-        [self toNoticeViewController:@"TIME'S UP!"];
+        [self countDownEnd];
     }
 }
 
+- (void) countDownEnd{
+    self.currentDesk.isAvailable = false;
+    [self updateDesk:self.currentDesk];
+    
+}
 
 
 #pragma mark - Table
@@ -154,7 +159,44 @@
 }
 
 
+#pragma mark - Internet
 
+- (void) updateDesk:(Desk *) fixedDesk{
+    NSLog(@"Fetching Floor Id");
+    NSString *URLString = @"http://188.166.214.252/index.php/desks/";
+    URLString = [NSString stringWithFormat:@"%@%i",URLString,fixedDesk.deskId];
+    NSDictionary *parameters = @{@"isAvailable":@(fixedDesk.isAvailable),@"user_id":@(1)};
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    [manager setResponseSerializer:responseSerializer];
+    [manager POST:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id
+                                                            responseObject) {
+        //        NSLog(@"JSON: %@", responseObject);
+        NSError *e = nil;
+        //        NSLog(@"URL: %@",operation.request);
+        // Response object are recieve in JSONObject
+        
+        NSMutableArray *jsonArray = [NSMutableArray arrayWithArray:responseObject];
+        
+        NSMutableArray *addedArray = [[NSMutableArray alloc] init];
+        if (!jsonArray) {
+            NSLog(@"Error parsing JSON: %@", e);
+        } else {
+            for(NSDictionary* dict in jsonArray){
+                Desk *desk = [[Desk alloc] initWithDictionary:dict];
+                [addedArray addObject:desk];
+            }
+            NSLog(@"No of added item %lu",(unsigned long)addedArray.count);
+            
+        }        
+        [self toNoticeViewController:@"TIME'S UP!"];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
+        
+        
+    }];
+}
 
 
 #pragma mark - Navigation
