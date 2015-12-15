@@ -34,6 +34,14 @@
     [self checkField];
 }
 
+- (void)textFieldDidReturn:(UITextField *)textField
+{
+    // Execute additional code
+    if([self.btnGo isEnabled]){
+        [self onClickGoButton:nil];
+    }
+}
+
 #pragma mark - Setup
 
 - (void) setupOnClick{
@@ -47,6 +55,9 @@
     [self.fieldPsw addTarget:self 
                       action:@selector(textFieldDidChange:) 
             forControlEvents:UIControlEventEditingChanged];
+
+    [self.fieldPsw addTarget:self action:@selector(textFieldDidReturn:) forControlEvents:UIControlEventEditingDidEndOnExit];
+
 }
 
 
@@ -103,6 +114,21 @@
         [LocalStorage saveUser:userList];
         [self toMainViewController:nil];
         
+    }else{
+        
+        //Wrong Id
+        [self.desciptionLabel setText:@"Wrong Chula ID or password! Try again!"];
+//        [self.desciptionLabel setTextColor:[UIColor orangeCustom]];
+        CABasicAnimation *shake = [CABasicAnimation animationWithKeyPath:@"position"];
+        [shake setDuration:0.1];
+        [shake setRepeatCount:2];
+        [shake setAutoreverses:YES];
+        [shake setFromValue:[NSValue valueWithCGPoint:
+                             CGPointMake(self.desciptionLabel.center.x - 5,self.desciptionLabel.center.y)]];
+        [shake setToValue:[NSValue valueWithCGPoint:
+                           CGPointMake(self.desciptionLabel.center.x + 5, self.desciptionLabel.center.y)]];
+        [self.desciptionLabel.layer addAnimation:shake forKey:@"position"];
+
     }
 }
 

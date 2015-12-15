@@ -10,6 +10,7 @@
 #import "User.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "LocalStorage.h"
+#import "CustomColors.h"
 @class LoginViewController;
 
 @protocol LoginViewControllerDelegate <NSObject>
@@ -21,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *fieldPsw;
 @property (weak, nonatomic) IBOutlet UIButton *btnGo;
 
+@property (weak, nonatomic) IBOutlet UILabel *desciptionLabel;
 @property (nonatomic, weak) id<LoginViewControllerDelegate>delegate;
 @end

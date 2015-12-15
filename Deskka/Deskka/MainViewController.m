@@ -18,14 +18,16 @@
 @implementation MainViewController{
     NSMutableArray *currentTableData; // Room Status Array
     NSMutableArray *queueMutableArray;
+    User * currentUser;
 
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self checkIfNeedLogin];
+//    [self checkIfNeedLogin];
     [self fetchFloorList];
     [self initializeVariable];
+    [self initializeTable];
     [self setupButton];
     
     //TODO: Fetch all floor data and room for calculation
@@ -36,7 +38,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    
+    [self checkIfNeedLogin];
     [self.logoutButton setEnabled:TRUE];
     
 }
@@ -47,6 +49,7 @@
 }
 
 - (void) didDismissController{
+    NSLog(@"Trigger Main Controller Dismiss");
     [self checkIfNeedLogin];
     [self fetchFloorList];
 }
@@ -54,6 +57,20 @@
 
 - (void) initializeVariable{
     currentTableData = [[NSMutableArray alloc] init];
+}
+
+- (void) initializeTable{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Reloading..."]; //to give the attributedTitle
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl
+{
+    
+    [self fetchFloorList];; //call method
+    [refreshControl endRefreshing];
 }
 
 - (void) setupButton{
@@ -64,9 +81,46 @@
 #pragma mark - onClick
 
 - (void) onClickLogout:(UIGestureRecognizer *) recognizer{
-    [LocalStorage saveUser:[[NSMutableArray alloc] init]];
+    
     [self.logoutButton setEnabled:FALSE];
-    [self toLoginViewController:recognizer];
+    [self showAlertLogout];
+    
+}
+
+- (void) logout{
+    [LocalStorage saveUser:[[NSMutableArray alloc] init]];
+    [self toLoginViewController:nil];
+}
+
+
+#pragma mark - Popup
+
+- (void)showAlertLogout
+{
+    NSString* title = @"Log out";
+    if(currentUser != nil){
+        title = [NSString stringWithFormat:@"Log out from %@",currentUser.firstname];
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:@"Are you sure?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"No"
+                                          otherButtonTitles:@"Yes", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch(buttonIndex) {
+        case 0: //"No" pressed
+            //do something?
+            [self.logoutButton setEnabled:TRUE];
+            break;
+        case 1: //"Yes" pressed
+            //here you pop the viewController
+            [self logout];
+            break;
+    }
 }
 
 #pragma mark - Table
@@ -216,16 +270,17 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
         } else {
             Floor *floor = [[Floor alloc] initWithDictionary:jsonObj];
             bool foundDuplicate = false;
-            Floor *dupFloor;
             for(Floor* fl in currentTableData){
                 if(fl.floorId == floor.floorId){
                     fl.max_amount = floor.max_amount;
                     fl.current_available = floor.current_available;
+                    foundDuplicate = true;
                     break;
                 }
             }
+
             
-            [currentTableData addObject:floor];
+            if(!foundDuplicate) [currentTableData addObject:floor];
         }
         
         //Sorting
@@ -308,6 +363,10 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
     if([userList count] == 0){
         [self toLoginViewController:nil];
     }else{
+        for(User * user in userList){
+            currentUser = user;
+            break;
+        }
          NSLog(@"User Amount: %i",[userList count]);
     }
 }

@@ -26,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initializeData];
+    [self initializeTable];
     [self countDown];
     [self onClickSetup];
     [self fetchFloorList];
@@ -47,6 +48,21 @@
     
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
 }
+
+- (void) initializeTable{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Reloading..."]; //to give the attributedTitle
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl
+{
+    
+    [self fetchFloorList];; //call method
+    [refreshControl endRefreshing];
+}
+
 
 - (void) initialSetupUI{
     if(![self.currentDesk isEqual:nil]){
@@ -283,16 +299,17 @@
         } else {
             Floor *floor = [[Floor alloc] initWithDictionary:jsonObj];
             bool foundDuplicate = false;
-            Floor *dupFloor;
             for(Floor* fl in currentTableData){
                 if(fl.floorId == floor.floorId){
                     fl.max_amount = floor.max_amount;
                     fl.current_available = floor.current_available;
+                    foundDuplicate = true;
                     break;
                 }
             }
             
-            [currentTableData addObject:floor];
+            
+            if(!foundDuplicate) [currentTableData addObject:floor];
         }
         
         //Sorting

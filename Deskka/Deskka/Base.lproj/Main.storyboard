@@ -855,6 +855,7 @@
                     </view>
                     <connections>
                         <outlet property="btnGo" destination="WBy-Vw-eS9" id="leV-HE-Vrc"/>
+                        <outlet property="desciptionLabel" destination="ku1-f4-wYc" id="jbf-nO-Cp1"/>
                         <outlet property="fieldId" destination="cbG-U8-a8E" id="Uks-Fp-JA3"/>
                         <outlet property="fieldPsw" destination="w2r-XR-bj0" id="MB0-M5-gfE"/>
                     </connections>
