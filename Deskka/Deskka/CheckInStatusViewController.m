@@ -60,12 +60,18 @@
     
     //TODO: Check out from network
     
-    [self toNoticeViewController:@"CHECKED OUT"];
+    [self checkout];
 }
 
 #pragma mark - Automation
 
 //TODO: Countdown Automation - when timeout post done to internet
+
+- (void) checkout{
+    self.currentDesk.isAvailable = true;
+    [self updateDesk:self.currentDesk withString:@"CHECKED OUT!"];
+    
+}
 
 
 -(void)countDown{
@@ -89,7 +95,7 @@
 
 - (void) countDownEnd{
     self.currentDesk.isAvailable = true;
-    [self updateDesk:self.currentDesk];
+    [self updateDesk:self.currentDesk withString:@"TIME'S UP!"];
     
 }
 
@@ -162,7 +168,7 @@
 
 #pragma mark - Internet
 
-- (void) updateDesk:(Desk *) fixedDesk{
+- (void) updateDesk:(Desk *) fixedDesk withString:(NSString *)noticeString{
     NSLog(@"Update Desk");
     NSString *URLString = @"http://188.166.214.252/index.php/desks/";
     URLString = [NSString stringWithFormat:@"%@%i",URLString,fixedDesk.deskId];
@@ -189,7 +195,7 @@
                 // Success
                 NSString* status = jsonObj[@"status"];
                 NSLog(@"Status: %@",status);
-                [self toNoticeViewController:@"TIME'S UP! CHECK OUT!"];
+                [self toNoticeViewController:noticeString];
             }else if([jsonObj objectForKey:@"error"]){
                 // Error
                 [self toNoticeViewController:@"Desk's Error"];
