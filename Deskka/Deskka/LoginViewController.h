@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "LocalStorage.h"
 @class LoginViewController;
 
 @protocol LoginViewControllerDelegate <NSObject>

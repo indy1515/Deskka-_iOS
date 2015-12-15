@@ -54,6 +54,9 @@
 - (void) toMainViewController:(UIGestureRecognizer *)recognizer{
     [self.view endEditing:YES];
     int i = 0;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AnyViewControllerDismissed" 
+                                                        object:nil 
+                                                      userInfo:nil];
     UIViewController* presentViewCon = self.presentingViewController;
     while(i < self.extraCloseLayerAmount){
         presentViewCon = presentViewCon.presentingViewController;

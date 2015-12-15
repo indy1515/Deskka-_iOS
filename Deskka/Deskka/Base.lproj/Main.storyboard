@@ -2039,6 +2039,7 @@
                     <connections>
                         <outlet property="blackView" destination="cOc-Ui-Duf" id="lBf-Dd-Bbk"/>
                         <outlet property="cancelButton" destination="Imu-23-E4V" id="mqU-9L-lb0"/>
+                        <outlet property="colorBgView" destination="huO-HH-SRh" id="1Mc-iD-5hf"/>
                         <outlet property="descriptionLabel1" destination="DpG-Ic-0Y6" id="1uf-Xf-ZE0"/>
                         <outlet property="descriptionLabel2" destination="d0P-YN-7oy" id="REV-m1-oDR"/>
                         <outlet property="loadingIndictor" destination="XcR-gt-xDg" id="zRX-RX-AT4"/>

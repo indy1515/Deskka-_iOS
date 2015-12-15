@@ -51,9 +51,14 @@
 
 
 - (void) setupUIwithFloor:(Floor *) floor{
+    [self setupBackgroundUI:floor];
     [self setupFloorNameUI:floor];
     [self setupPercentageAndCounterUI:floor];
     [self fetchFloorRoomStat:floor.floorId];
+}
+
+- (void) setupBackgroundUI:(Floor *)floor{
+    [self.colorBgView setBackgroundColor:[ColorHelper getBackgroundColorFromValue:(int)[floor getAvailablePercent]]];
 }
 
 - (void) setupRoomStatUI:(int) noise withNoiseless:(int) noiseless{

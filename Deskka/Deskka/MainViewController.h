@@ -12,6 +12,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "User.h"
 #import "LoginViewController.h"
+#import "LocalStorage.h"
 
 @class MainViewController;
 

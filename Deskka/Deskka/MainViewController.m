@@ -18,7 +18,7 @@
 @implementation MainViewController{
     NSMutableArray *currentTableData; // Room Status Array
     NSMutableArray *queueMutableArray;
-    
+
 }
 
 - (void)viewDidLoad {
@@ -46,6 +46,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) didDismissController{
+    [self checkIfNeedLogin];
+    [self fetchFloorList];
+}
+
 
 - (void) initializeVariable{
     currentTableData = [[NSMutableArray alloc] init];
@@ -59,7 +64,7 @@
 #pragma mark - onClick
 
 - (void) onClickLogout:(UIGestureRecognizer *) recognizer{
-    [self saveUser:[[NSMutableArray alloc] init]];
+    [LocalStorage saveUser:[[NSMutableArray alloc] init]];
     [self.logoutButton setEnabled:FALSE];
     [self toLoginViewController:recognizer];
 }
@@ -211,13 +216,16 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
         } else {
             Floor *floor = [[Floor alloc] initWithDictionary:jsonObj];
             bool foundDuplicate = false;
+            Floor *dupFloor;
             for(Floor* fl in currentTableData){
                 if(fl.floorId == floor.floorId){
-                    foundDuplicate = true;
+                    fl.max_amount = floor.max_amount;
+                    fl.current_available = floor.current_available;
                     break;
                 }
             }
-            if(!foundDuplicate) [currentTableData addObject:floor];
+            
+            [currentTableData addObject:floor];
         }
         
         //Sorting
@@ -272,6 +280,10 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
 - (void) toScanViewController:(UIGestureRecognizer *)recognizer {
     ScanViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ScanViewController"];
     VC2.delegate = self;
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didDismissController) 
+                                                 name:@"AnyViewControllerDismissed" 
+                                               object:nil];
     [self presentViewController:VC2 animated:NO completion:^{
         //  [loadingView startAnimating];
         NSLog(@"completion fired");
@@ -291,58 +303,13 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
 #pragma mark - USER
 
 - (void) checkIfNeedLogin{
-    NSMutableArray *userList = [self loadUser];
+    NSMutableArray *userList = [LocalStorage loadUser];
    
     if([userList count] == 0){
         [self toLoginViewController:nil];
     }else{
          NSLog(@"User Amount: %i",[userList count]);
     }
-}
-
-#pragma mark - save/load
-
-- (NSMutableArray *) loadUser{
-    // Format is Array of Dictionary with key = @"stationName",@"stationId"
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"userList.plist"];
-    NSMutableArray *userDictList = [[[NSMutableArray alloc]initWithContentsOfFile:plistPath]mutableCopy];
-    if([userDictList isEqual: nil]) return nil;
-    if([userDictList count] == 0) return nil;
-    NSMutableArray *userList = [[NSMutableArray alloc] init];
-    for(NSDictionary* userDict in userDictList){
-        User* user = [[User alloc] initWithDictionary:userDict];
-        [userList insertObject:user atIndex:0];
-        return userList;
-    }
-    
-    return userList;
-}
-
-- (void) saveUser:(NSMutableArray *) userList {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"userList.plist"];
-    NSMutableArray* recentList = [[NSMutableArray alloc] init];
-    if(!([userList count] == 0)){
-        for(User * user in userList){
-            NSDictionary* newData = @{
-                                      @"id":[NSString stringWithFormat:@"%i",user.userId],
-                                      @"chulaID":user.chulaId,
-                                      @"password": user.password,
-                                      @"name": user.firstname,
-                                      @"lastName": user.lastname,
-                                      @"faculty": user.faculty,
-                                      @"major": user.major,
-                                      @"year": user.year
-                                      };
-            [recentList insertObject:newData atIndex:0];
-        }
-    }
-    [recentList writeToFile:filePath atomically:YES];
-    NSLog(@"User Save");
 }
 
 

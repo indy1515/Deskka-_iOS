@@ -354,6 +354,9 @@
 
 
 - (void) toMainViewController:(UIGestureRecognizer *)recognizer{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AnyViewControllerDismissed" 
+                                                        object:nil 
+                                                      userInfo:nil];
     [self.view endEditing:YES];
     [self dismissViewControllerAnimated:NO completion:nil];
 }

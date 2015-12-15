@@ -13,6 +13,7 @@
 #import "CustomColors.h"
 #import "NoticeViewController.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "FloorStatusViewController.h"
 
 @class CheckInStatusViewController;
 
@@ -21,7 +22,7 @@
 
 @end
 
-@interface CheckInStatusViewController : UIViewController<NoticeViewControllerDelegate>
+@interface CheckInStatusViewController : UIViewController<NoticeViewControllerDelegate,FloorStatusViewControllerDelegate>
 
 @property (nonatomic, weak) id<CheckInStatusViewControllerDelegate>delegate;
 

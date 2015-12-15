@@ -18,6 +18,7 @@
 		18462B881C2080BC000918AE /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18462B871C2080BC000918AE /* ColorHelper.m */; };
 		18462B8B1C2097F4000918AE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 18462B8A1C2097F4000918AE /* User.m */; };
 		18462B8D1C209F2F000918AE /* userList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18462B8C1C209F2F000918AE /* userList.plist */; };
+		18462B901C20CAED000918AE /* LocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 18462B8F1C20CAED000918AE /* LocalStorage.m */; };
 		18BF025F1BCAD02600070C1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF025E1BCAD02600070C1B /* main.m */; };
 		18BF02621BCAD02600070C1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF02611BCAD02600070C1B /* AppDelegate.m */; };
 		18BF02681BCAD02600070C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF02661BCAD02600070C1B /* Main.storyboard */; };
@@ -72,6 +73,8 @@
 		18462B891C2097F4000918AE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		18462B8A1C2097F4000918AE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		18462B8C1C209F2F000918AE /* userList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userList.plist; sourceTree = "<group>"; };
+		18462B8E1C20CAED000918AE /* LocalStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalStorage.h; path = ColorHelper/LocalStorage.h; sourceTree = "<group>"; };
+		18462B8F1C20CAED000918AE /* LocalStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalStorage.m; path = ColorHelper/LocalStorage.m; sourceTree = "<group>"; };
 		18BF025A1BCAD02600070C1B /* Deskka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deskka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF025E1BCAD02600070C1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18BF02601BCAD02600070C1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 			children = (
 				18462B861C2080BC000918AE /* ColorHelper.h */,
 				18462B871C2080BC000918AE /* ColorHelper.m */,
+				18462B8E1C20CAED000918AE /* LocalStorage.h */,
+				18462B8F1C20CAED000918AE /* LocalStorage.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				18362B8C1C1C17B500023697 /* CheckInStatusViewController.m in Sources */,
 				18BF02A51BCAE49900070C1B /* Floor.m in Sources */,
 				181401901BCB2179007853D4 /* Room.m in Sources */,
+				18462B901C20CAED000918AE /* LocalStorage.m in Sources */,
 				18BF02921BCAD08A00070C1B /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
