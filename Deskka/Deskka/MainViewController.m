@@ -19,6 +19,7 @@
     NSMutableArray *currentTableData; // Room Status Array
     NSMutableArray *queueMutableArray;
     User * currentUser;
+    int countLogin;
 
 }
 
@@ -57,6 +58,7 @@
 
 - (void) initializeVariable{
     currentTableData = [[NSMutableArray alloc] init];
+    countLogin = 0;
 }
 
 - (void) initializeTable{
@@ -121,6 +123,21 @@
             [self logout];
             break;
     }
+}
+
+#pragma mark Snackbar
+
+- (SSSnackbar *)snackbarForQuickRunningItem:(NSString *)item {
+    NSString *snackbarMessage = [NSString stringWithFormat:@"%@", item];
+    
+    SSSnackbar *snackbar = [SSSnackbar snackbarWithMessage:snackbarMessage
+                                                actionText:@"Dismiss"
+                                                  duration:5
+                                               actionBlock:^(SSSnackbar *sender){
+                                                  
+                                               }
+                                                dismissalBlock:nil];
+    return snackbar;
 }
 
 #pragma mark - Table
@@ -324,6 +341,7 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
 #pragma mark - Navigation
 
 - (void) toLoginViewController:(UIGestureRecognizer *)recognizer {
+    countLogin++;
     LoginViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     VC2.delegate = self;
     [self presentViewController:VC2 animated:NO completion:^{
@@ -361,15 +379,23 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
     NSMutableArray *userList = [LocalStorage loadUser];
    
     if([userList count] == 0){
+        
         [self toLoginViewController:nil];
     }else{
         for(User * user in userList){
             currentUser = user;
+            NSString *title = [NSString stringWithFormat:@"Welcome! %@ %@",currentUser.firstname,currentUser.lastname];
+            if(countLogin > 0){
+                title = [NSString stringWithFormat:@"Logged in as %@ %@",currentUser.firstname,currentUser.lastname];
+            }
+            SSSnackbar * snackbar = [self snackbarForQuickRunningItem:title];
+            [snackbar show];
             break;
         }
          NSLog(@"User Amount: %i",[userList count]);
     }
 }
+
 
 
 
