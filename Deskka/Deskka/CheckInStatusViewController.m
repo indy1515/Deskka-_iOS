@@ -47,6 +47,11 @@
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
 }
 
+- (void) initialSetupUI{
+    if(![self.currentDesk isEqual:nil]){
+        [self.deskLabel setText:self.currentDesk.name];
+    }
+}
 
 #pragma mark - setup
 
@@ -124,31 +129,15 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RoomStatusCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    NSLog(@"Table Cell %i",indexPath.row);
+    NSLog(@"Table Cell %li",(long)indexPath.row);
     //    //    tableView.separatorColor = [UIColor whiteColor];
     Floor *cellValue = [currentTableData objectAtIndex:indexPath.row];
     cell.nameLabel.text = cellValue.name;
-    cell.availableLabel.text = [NSString stringWithFormat:@"%i%%",(int)[cellValue getAvailablePercent]];
-    [cell setBackgroundWithPercentage:(int)[cellValue getAvailablePercent]];
-    
+    [cell setPercentageLabel:(int)[cellValue getAvailablePercent]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    //    if(cellValue.isShown){
-    //        [cell.viewButton setImage:[UIImage imageNamed:@"main_show"] forState:UIControlStateNormal];
-    //        
-    //    }else{
-    //        [cell.viewButton setImage:[UIImage imageNamed:@"main_hide"] forState:UIControlStateNormal];
-    //    }
-    //    cell.busNoLabel.text = cellValue.nameTH;
-    //    cell.stationALabel.text = [cellValue getStationA];
-    //    cell.stationBLabel.text = [cellValue getStationB];
-    //    cell.delegate = self;
-    //    cell.cellIndex = indexPath.row;
-    //    //    directionType;
-    //    //    stationALabel;
-    //    //    stationBLabel;
-    //    //    viewButton;
-    //    
+    
+    
     if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [tableView setSeparatorInset:UIEdgeInsetsZero];
         if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
@@ -159,11 +148,17 @@
     return cell;
 }
 
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger rowNo = indexPath.row;
-//    [self toFloorStatusViewController:nil];
+    Floor *cellValue = [currentTableData objectAtIndex:indexPath.row];
+    
+//    [self toFloorStatusViewController:cellValue];
 }
+
 
 
 #pragma mark - Internet

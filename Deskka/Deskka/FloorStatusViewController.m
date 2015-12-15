@@ -31,7 +31,7 @@
 #pragma mark - Intialization
 
 - (void) initializeDataAndView{
-    if([self.currentFloor isEqual:nil]){
+    if(![self.currentFloor isEqual:nil]){
         [self setupUIwithFloor:self.currentFloor];
     }
 }
@@ -58,8 +58,15 @@
 
 - (void) setupRoomStatUI:(int) noise withNoiseless:(int) noiseless{
     //TODO: set room type stat
-    [self.descriptionLabel1 setText:[NSString stringWithFormat:@"%i QUIET ROOMS",noiseless]];
-    [self.descriptionLabel2 setText:[NSString stringWithFormat:@"%i NOISY ROOMS",noise]];
+    self.descriptionLabel1.text = @"0";
+    self.descriptionLabel1.format = @"%d";
+    self.descriptionLabel1.method = UILabelCountingMethodLinear;
+    [self.descriptionLabel1 countFrom:[self.descriptionLabel1 currentValue] to:noiseless withDuration:0.3f];
+
+    self.descriptionLabel2.text = @"0";
+    self.descriptionLabel2.format = @"%d";
+    self.descriptionLabel2.method = UILabelCountingMethodLinear;
+    [self.descriptionLabel2 countFrom:[self.descriptionLabel2 currentValue] to:noise withDuration:0.3f];
     
 }
 
@@ -74,7 +81,7 @@
  **/
 - (void) setupPercentageAndCounterUI:(Floor *) floor{
     // Setup available percentage
-    NSString *availablePercentage = [NSString stringWithFormat:@"%f",[floor getAvailablePercent]];
+    NSString *availablePercentage = [NSString stringWithFormat:@"%i%%",(int)[floor getAvailablePercent]];
     [self.percentLabel setText:availablePercentage];
     
     // Setup available counter string
@@ -89,9 +96,10 @@
 #pragma mark - Internet
 
 - (void) fetchFloorRoomStat:(int) floorId{
+    [self startLoading];
     NSLog(@"Fetching Floor Room Stat Id");
     NSString *URLString = [NSString stringWithFormat:@"http://188.166.214.252/index.php/floors/%i/rooms",floorId];
-    NSDictionary *parameters = nil;
+    NSDictionary *parameters = @{@"option":@"getRoomStat"};
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
@@ -114,15 +122,33 @@
             [self setupRoomStatUI:noiseRoomAmt withNoiseless:noiselessRoomAmt];
             
         }
-        
+        [self stopLoading];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error AFHTTP: %@ Response: %@", operation.response.URL, operation.responseString);
-        
+        [self stopLoading];
         
     }];
 }
 
+
+- (void) startLoading{
+    [self.loadingIndictor startAnimating];
+    [self.blackView setAlpha:0.3];
+    [self.blackView setHidden:NO];
+}
+
+- (void) stopLoading{
+    [self.loadingIndictor stopAnimating];
+    [UIView animateWithDuration:0.3f animations:^{
+        
+        [self.blackView setAlpha:0.0f];
+        
+    } completion:^(BOOL finished){
+        [self.blackView setHidden:YES];
+    }];
+    
+}
 
 
 #pragma mark - Navigation

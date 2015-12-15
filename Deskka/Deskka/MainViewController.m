@@ -76,7 +76,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RoomStatusCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    NSLog(@"Table Cell %i",indexPath.row);
+    NSLog(@"Table Cell %li",(long)indexPath.row);
 //    //    tableView.separatorColor = [UIColor whiteColor];
     Floor *cellValue = [currentTableData objectAtIndex:indexPath.row];
     cell.nameLabel.text = cellValue.name;
@@ -95,20 +95,15 @@
     return cell;
 }
 
-- (void)insertRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
-{
-    for (NSIndexPath *indexPath in indexPaths)
-    {
-        RoomStatusCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        [cell startAnimation];
-    }
-}
+
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger rowNo = indexPath.row;
-    [self toFloorStatusViewController:nil];
+    Floor *cellValue = [currentTableData objectAtIndex:indexPath.row];
+
+    [self toFloorStatusViewController:cellValue];
 }
 
 
@@ -256,9 +251,10 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
     }];
 }
 
-- (void) toFloorStatusViewController:(UIGestureRecognizer *)recognizer {
+- (void) toFloorStatusViewController:(Floor *)floor {
     FloorStatusViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"FloorStatusViewController"];
     VC2.delegate = self;
+    VC2.currentFloor = floor;
     [self presentViewController:VC2 animated:NO completion:^{
         //  [loadingView startAnimating];
         NSLog(@"completion fired");

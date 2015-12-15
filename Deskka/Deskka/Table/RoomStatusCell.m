@@ -15,6 +15,10 @@
     // Initialization code
 }
 
+- (void) layoutSubviews{
+    [self startAnimation];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -28,28 +32,22 @@
 }
 
 - (void) startAnimation{
-    self.availableLabel.text = [NSString stringWithFormat:@"%i%%",(int)self.availablePercentage];
+    self.availableLabel.text = @"0%%";
+    self.availableLabel.format = @"%d%%";
+    self.availableLabel.method = UILabelCountingMethodEaseOut;
+    [self.availableLabel countFrom:0 to:(int)self.availablePercentage withDuration:1.0f];
+//    self.availableLabel.text = [NSString stringWithFormat:@"%i%%",(int)self.availablePercentage];
     
 }
 
 - (void) setPercentageLabel:(float) value{
-    
     self.availablePercentage = value;
     [self setBackgroundWithPercentage:value];
 }
 
 - (void) setBackgroundWithPercentage:(float) value{
     UIColor *bgColor = [UIColor blueCustom];
-    if(value >= 51){
-        bgColor = [UIColor blueCustom];
-    }else if(value >= 21){
-        bgColor = [UIColor violetCustom];
-    }else if(value >= 11){
-        bgColor = [UIColor blush];
-    }else{
-        bgColor = [UIColor orangeCustom];
-    }
-    
+    bgColor = [ColorHelper getBackgroundColorFromValue:(int) value];    
     self.backgroundView.backgroundColor = bgColor;
 }
 

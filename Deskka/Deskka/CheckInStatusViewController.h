@@ -26,10 +26,12 @@
 @property (nonatomic, weak) id<CheckInStatusViewControllerDelegate>delegate;
 
 @property (nonatomic, retain) Desk *currentDesk;
+@property (weak, nonatomic) IBOutlet UILabel *deskLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIButton *checkoutButton;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
 
 @end
