@@ -365,6 +365,7 @@
     NoticeViewController *VC2 = [self.storyboard instantiateViewControllerWithIdentifier:@"NoticeViewController"];
     VC2.delegate = self;
     VC2.extraCloseLayerAmount = 0;
+    VC2.isNotDismissToMain = true;
     VC2.titleString = titleString;
     [self presentViewController:VC2 animated:YES completion:^{
         //  [loadingView startAnimating];
