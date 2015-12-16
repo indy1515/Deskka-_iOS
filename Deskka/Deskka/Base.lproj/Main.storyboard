@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -93,6 +93,9 @@
                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="24"/>
                                                 <color key="textColor" red="0.1803921568627451" green="0.19215686274509802" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="117" y="79" width="166" height="28"/>
+                                                </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgX-ow-OEk">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -135,12 +138,12 @@
                                                 <exclude reference="rgX-ow-OEk"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="6KY-2N-O89"/>
-                                                <exclude reference="zWE-od-Jyd"/>
                                                 <exclude reference="cac-WN-t2N"/>
                                                 <exclude reference="l3B-Zp-h4D"/>
                                                 <exclude reference="Rg9-E6-xIa"/>
                                                 <exclude reference="Z28-uM-b9Z"/>
+                                                <exclude reference="6KY-2N-O89"/>
+                                                <exclude reference="zWE-od-Jyd"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -150,12 +153,12 @@
                                                 <include reference="rgX-ow-OEk"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="6KY-2N-O89"/>
-                                                <include reference="zWE-od-Jyd"/>
                                                 <include reference="cac-WN-t2N"/>
                                                 <include reference="l3B-Zp-h4D"/>
                                                 <include reference="Rg9-E6-xIa"/>
                                                 <include reference="Z28-uM-b9Z"/>
+                                                <include reference="6KY-2N-O89"/>
+                                                <include reference="zWE-od-Jyd"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -256,12 +259,18 @@
                                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="15"/>
                                                                 <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                    <rect key="frame" x="0.0" y="6" width="30" height="18"/>
+                                                                </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="available" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb3-Vs-Bfo">
                                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="15"/>
                                                                 <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                    <rect key="frame" x="281" y="6" width="59" height="18"/>
+                                                                </variation>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
@@ -1354,24 +1363,36 @@
                                                         <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="40"/>
                                                         <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="48" height="47"/>
+                                                        </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHAMCHURI 9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwP-9W-9s1" userLabel="bldgLabel">
                                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="15"/>
                                                         <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="0.0" y="42" width="104" height="18"/>
+                                                        </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVAILABLE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpH-ab-o80" userLabel="avblLabel">
                                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="15"/>
                                                         <color key="textColor" red="0.92941176469999998" green="0.43137254899999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="263" y="42" width="77" height="18"/>
+                                                        </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl0-8h-DLq" userLabel="percentLabel">
                                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="40"/>
                                                         <color key="textColor" red="0.92941176469999998" green="0.43137254899999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="275" y="0.0" width="65" height="47"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1515,6 +1536,9 @@
                                                         <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="98" y="93" width="204" height="30"/>
+                                                        </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ce-Ei-bdx">
                                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1589,24 +1613,36 @@
                                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="48"/>
                                                                 <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="27" height="56"/>
+                                                                </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUIET ROOMS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUK-Hd-e9F">
                                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="25"/>
                                                                 <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                    <rect key="frame" x="46" y="13" width="174" height="30"/>
+                                                                </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0P-YN-7oy" customClass="UICountingLabel">
                                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="48"/>
                                                                 <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                    <rect key="frame" x="0.0" y="84" width="27" height="56"/>
+                                                                </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOISY ROOMS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DO-Fx-sfl">
                                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="25"/>
                                                                 <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                    <rect key="frame" x="44" y="97" width="176" height="30"/>
+                                                                </variation>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1632,14 +1668,14 @@
                                                             <mask key="constraints">
                                                                 <exclude reference="65B-Nl-zb8"/>
                                                                 <exclude reference="DJm-oA-VU9"/>
+                                                                <exclude reference="KHj-Rd-aXy"/>
+                                                                <exclude reference="KXi-vX-ZBL"/>
                                                                 <exclude reference="VCU-tX-ksH"/>
                                                                 <exclude reference="xSI-XZ-pK2"/>
                                                                 <exclude reference="4QX-xW-1c9"/>
                                                                 <exclude reference="sSZ-v0-07V"/>
                                                                 <exclude reference="pQU-zV-gXE"/>
                                                                 <exclude reference="vQD-uM-Lrp"/>
-                                                                <exclude reference="KHj-Rd-aXy"/>
-                                                                <exclude reference="KXi-vX-ZBL"/>
                                                             </mask>
                                                         </variation>
                                                         <variation key="heightClass=regular-widthClass=compact">
@@ -1652,14 +1688,14 @@
                                                             <mask key="constraints">
                                                                 <include reference="65B-Nl-zb8"/>
                                                                 <include reference="DJm-oA-VU9"/>
+                                                                <include reference="KHj-Rd-aXy"/>
+                                                                <include reference="KXi-vX-ZBL"/>
                                                                 <include reference="VCU-tX-ksH"/>
                                                                 <include reference="xSI-XZ-pK2"/>
                                                                 <include reference="4QX-xW-1c9"/>
                                                                 <include reference="sSZ-v0-07V"/>
                                                                 <include reference="pQU-zV-gXE"/>
                                                                 <include reference="vQD-uM-Lrp"/>
-                                                                <include reference="KHj-Rd-aXy"/>
-                                                                <include reference="KXi-vX-ZBL"/>
                                                             </mask>
                                                         </variation>
                                                     </view>
@@ -1838,15 +1874,15 @@
                                                         <exclude reference="3qN-Rs-Z0w"/>
                                                     </mask>
                                                     <mask key="constraints">
+                                                        <exclude reference="0og-w0-Lgh"/>
+                                                        <exclude reference="AeA-Ud-y5y"/>
+                                                        <exclude reference="jEx-sF-NyN"/>
                                                         <exclude reference="OOQ-Nz-vjj"/>
                                                         <exclude reference="rX5-Te-Cod"/>
                                                         <exclude reference="BT0-Cr-Sb9"/>
                                                         <exclude reference="R4R-Yb-Fq7"/>
                                                         <exclude reference="SKj-h0-NlU"/>
                                                         <exclude reference="zSG-Mx-Ah6"/>
-                                                        <exclude reference="0og-w0-Lgh"/>
-                                                        <exclude reference="AeA-Ud-y5y"/>
-                                                        <exclude reference="jEx-sF-NyN"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -1856,15 +1892,15 @@
                                                         <include reference="3qN-Rs-Z0w"/>
                                                     </mask>
                                                     <mask key="constraints">
+                                                        <include reference="0og-w0-Lgh"/>
+                                                        <include reference="AeA-Ud-y5y"/>
+                                                        <include reference="jEx-sF-NyN"/>
                                                         <include reference="OOQ-Nz-vjj"/>
                                                         <include reference="rX5-Te-Cod"/>
                                                         <include reference="BT0-Cr-Sb9"/>
                                                         <include reference="R4R-Yb-Fq7"/>
                                                         <include reference="SKj-h0-NlU"/>
                                                         <include reference="zSG-Mx-Ah6"/>
-                                                        <include reference="0og-w0-Lgh"/>
-                                                        <include reference="AeA-Ud-y5y"/>
-                                                        <include reference="jEx-sF-NyN"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -1891,14 +1927,14 @@
                                                 <exclude reference="arl-ua-3Ca"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="8mV-Df-c9w"/>
-                                                <exclude reference="BEM-iu-z2h"/>
-                                                <exclude reference="Jbq-fQ-G4s"/>
-                                                <exclude reference="vIl-m0-dEc"/>
                                                 <exclude reference="MtQ-a8-czg"/>
                                                 <exclude reference="YqW-Wy-ueG"/>
                                                 <exclude reference="gs7-L3-Fat"/>
                                                 <exclude reference="uiY-qL-ZHo"/>
+                                                <exclude reference="8mV-Df-c9w"/>
+                                                <exclude reference="BEM-iu-z2h"/>
+                                                <exclude reference="Jbq-fQ-G4s"/>
+                                                <exclude reference="vIl-m0-dEc"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -1907,14 +1943,14 @@
                                                 <include reference="arl-ua-3Ca"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="8mV-Df-c9w"/>
-                                                <include reference="BEM-iu-z2h"/>
-                                                <include reference="Jbq-fQ-G4s"/>
-                                                <include reference="vIl-m0-dEc"/>
                                                 <include reference="MtQ-a8-czg"/>
                                                 <include reference="YqW-Wy-ueG"/>
                                                 <include reference="gs7-L3-Fat"/>
                                                 <include reference="uiY-qL-ZHo"/>
+                                                <include reference="8mV-Df-c9w"/>
+                                                <include reference="BEM-iu-z2h"/>
+                                                <include reference="Jbq-fQ-G4s"/>
+                                                <include reference="vIl-m0-dEc"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -2150,7 +2186,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="81" y="91" width="237" height="31.5"/>
+                                            <rect key="frame" x="82" y="91" width="237" height="32"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -2484,12 +2520,18 @@
                                                         <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="30"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="12" y="0.0" width="76" height="35"/>
+                                                        </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MINS LEFT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-VE-Ezg">
                                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="16"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="9" y="31" width="82" height="19"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2538,12 +2580,18 @@
                                                         <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="30"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="0.0" y="0.0" width="170" height="35"/>
+                                                        </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHECKED IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20K-jC-cVf">
                                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                         <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="16"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="0.0" y="31" width="170" height="19"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2569,12 +2617,12 @@
                                                         <exclude reference="K4V-i2-zMg"/>
                                                         <exclude reference="OfA-fI-zEd"/>
                                                         <exclude reference="muw-us-AQH"/>
-                                                        <exclude reference="GuC-TE-r1b"/>
-                                                        <exclude reference="Hm8-CU-VB9"/>
-                                                        <exclude reference="QbI-xQ-YwT"/>
                                                         <exclude reference="bvd-Kr-hPf"/>
                                                         <exclude reference="ed2-ZJ-1Nc"/>
                                                         <exclude reference="mqQ-VJ-57x"/>
+                                                        <exclude reference="GuC-TE-r1b"/>
+                                                        <exclude reference="Hm8-CU-VB9"/>
+                                                        <exclude reference="QbI-xQ-YwT"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2586,12 +2634,12 @@
                                                         <include reference="K4V-i2-zMg"/>
                                                         <include reference="OfA-fI-zEd"/>
                                                         <include reference="muw-us-AQH"/>
-                                                        <include reference="GuC-TE-r1b"/>
-                                                        <include reference="Hm8-CU-VB9"/>
-                                                        <include reference="QbI-xQ-YwT"/>
                                                         <include reference="bvd-Kr-hPf"/>
                                                         <include reference="ed2-ZJ-1Nc"/>
                                                         <include reference="mqQ-VJ-57x"/>
+                                                        <include reference="GuC-TE-r1b"/>
+                                                        <include reference="Hm8-CU-VB9"/>
+                                                        <include reference="QbI-xQ-YwT"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -2609,10 +2657,10 @@
                                                 <exclude reference="xBc-zx-ITn"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="5pQ-5i-PdT"/>
-                                                <exclude reference="sJR-E1-tgu"/>
                                                 <exclude reference="8l8-Om-z5n"/>
                                                 <exclude reference="Lp5-qf-oqb"/>
+                                                <exclude reference="5pQ-5i-PdT"/>
+                                                <exclude reference="sJR-E1-tgu"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -2621,10 +2669,10 @@
                                                 <include reference="xBc-zx-ITn"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="5pQ-5i-PdT"/>
-                                                <include reference="sJR-E1-tgu"/>
                                                 <include reference="8l8-Om-z5n"/>
                                                 <include reference="Lp5-qf-oqb"/>
+                                                <include reference="5pQ-5i-PdT"/>
+                                                <include reference="sJR-E1-tgu"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -2725,12 +2773,18 @@
                                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="15"/>
                                                                 <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                    <rect key="frame" x="0.0" y="6" width="30" height="18"/>
+                                                                </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="available" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFh-vM-dQY">
                                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Geomanist-Bold" family="Geomanist" pointSize="15"/>
                                                                 <color key="textColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                    <rect key="frame" x="281" y="6" width="59" height="18"/>
+                                                                </variation>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
