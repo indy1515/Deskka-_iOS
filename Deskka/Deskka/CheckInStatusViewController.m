@@ -65,8 +65,8 @@
 
 
 - (void) initialSetupUI{
-    if(![self.currentDesk isEqual:nil]){
-        [self.deskLabel setText:self.currentDesk.name];
+    if(self.currentDesk != nil){
+        if(self.currentDesk.name != nil) [self.deskLabel setText:self.currentDesk.name];
     }
 }
 

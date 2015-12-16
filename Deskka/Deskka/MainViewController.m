@@ -384,7 +384,7 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
     }else{
         for(User * user in userList){
             currentUser = user;
-            NSString *title = [NSString stringWithFormat:@"Welcome! %@ %@",currentUser.firstname,currentUser.lastname];
+            NSString *title = [NSString stringWithFormat:@"Welcome Back! %@ %@",currentUser.firstname,currentUser.lastname];
             if(countLogin > 0){
                 title = [NSString stringWithFormat:@"Logged in as %@ %@",currentUser.firstname,currentUser.lastname];
             }
