@@ -27,6 +27,7 @@
     // Do any additional setup after loading the view.
     [self initializeData];
     [self initializeTable];
+    [self initialSetupUI];
     [self countDown];
     [self onClickSetup];
     [self fetchFloorList];

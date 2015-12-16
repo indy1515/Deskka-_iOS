@@ -20,6 +20,7 @@
     NSMutableArray *queueMutableArray;
     User * currentUser;
     int countLogin;
+    SSSnackbar * snackbar;
 
 }
 
@@ -388,8 +389,10 @@ NSInteger sort(Floor* a, Floor* b, void*p) {
             if(countLogin > 0){
                 title = [NSString stringWithFormat:@"Logged in as %@ %@",currentUser.firstname,currentUser.lastname];
             }
-            SSSnackbar * snackbar = [self snackbarForQuickRunningItem:title];
-            [snackbar show];
+            if(snackbar == nil){
+                snackbar = [self snackbarForQuickRunningItem:title];
+                [snackbar show];
+            }
             break;
         }
          NSLog(@"User Amount: %i",[userList count]);
